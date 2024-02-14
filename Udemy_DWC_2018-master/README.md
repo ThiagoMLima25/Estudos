@@ -1,0 +1,3 @@
+# Curso Udemy de Desenvolvimento Web
+        💻 Este repositório é dedicado ao estudo geral de tecnologias, linguagens e bibliotecas utilizadas no desenvolvimento web, como parte do curso de Desenvolvimento Web realizado na Udemy em janeiro de 2019. O objetivo é abordar e explorar algumas das tecnologias mais relevantes e amplamente utilizadas no desenvolvimento de aplicações web.
+        Explorando uma variedade de tópicos essenciais para o desenvolvimento web, incluindo HTML, CSS, JavaScript, AJAX para realização de requisições assíncronas, frameworks front-end como Bootstrap e bibliotecas como jQuery. Além disso, conceitos de programação do lado do servidor com PHP, bancos de dados relacionais com MySQL e manipulação de dados com SQL.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+       //Ciclo de vida de uma variável
+       /*
+        * 1- Declaração   
+        * 2- Inicialização
+        * 3- Uso
+        */
+        var nome;
+        nome = "Thiago";
+        alert(nome);
+
+       //Ciclo de vida de uma função
+       /*
+        * 1- Declaração   
+        * 2- uso
+        * 3- resultado
+        */
+        var resultado = somar(3, 2);
+        alert(resultado);
+
+        function somar(a, b) {
+            return a + b;
+        }
+        
+        //Em JavaScript uma variável pode ser usada antes de ser declarada.
+    </script>
+</html>

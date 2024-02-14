@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BIRTHDAY_INVITATION.Models.Home>
+
+@{
+    ViewData["Title"] = "confirmados";
+}
+
+<h1>Confirmados</h1>
+<hr />
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Home item in Model)
+        {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.email</td>
+            <td>@item.phone</td>
+        </tr>
+        }
+    </tbody>
+</table>

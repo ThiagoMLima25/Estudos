@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+        //this é determinado por quem chamou a função
+        // var jogador = {
+        //     nome: "Cristiano Ronaldo",
+        //     habilidades: ["chutar","driblar","chutar","bater falta"],
+        //     escreverHabilidades: function() {
+        //         //vai dar erro no nome pois não encontra a propriedade nome dentro deste escopo
+        //         console.log(this.nome);
+        //         console.log(this.habilidades);
+        //         this.habilidades.forEach(function(skill){
+        //             console.log(this.nome + " possui a habilidade de "+ skill);
+        //         }.bind(this));
+        //     }
+        // }
+
+        var jogador = {
+            nome: "Cristiano Ronaldo",
+            habilidades: ["chutar","driblar","chutar","bater falta"],
+            escreverHabilidades() {
+                this.habilidades.forEach(skill =>{
+                    console.log(this.nome + " possui a habilidade de "+ skill)
+                });
+            }
+        }
+
+        jogador.escreverHabilidades();
+    </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos de Matriz</title>
+</head>
+<body>
+	<p>toString: <span id="string"></span></p>
+	<p>pop:  <span id="pop"></span></p>
+	<p>pop (elemento retirado):  <span id="pop2"></span></p>
+	<p>join: <span id="join"></span></p>
+<br>
+	Push: <button onclick="push()">Adicionar</button>
+
+	<p id="push"></p>
+	Quantidade de elementos adicionados na matriz:<p id="pushShow"></p>
+	<script type="text/javascript">
+	//O método JavaScript toString converte uma matriz em uma string de valores de matriz (separados por vírgula).	
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("string").innerHTML = fruits.toString();
+
+	//O método join também une todos os elementos da matriz em uma string. Ele se comporta como toString, mas além disso você pode especificar o separador
+		var fruit = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("join").innerHTML = fruit.join(" - ");
+
+	//O método pop retorna o valor que foi "retirado"
+	document.getElementById("pop2").innerHTML = fruits.pop();
+
+	//O método pop remove o último elemento de uma matriz:
+	//fruits.pop();
+	document.getElementById("pop").innerHTML = fruits;
+
+	//O método push adiciona um novo elemento a um array (no final)
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("push").innerHTML = fruits; //-> Apresenta matriz
+
+	function push() {
+		//fruits.push("Kiwi");
+		//O método push () retorna o novo tamanho da matriz:
+	    document.getElementById("pushShow").innerHTML = fruits.push("Kiwi");
+	    document.getElementById("push").innerHTML = fruits;
+	}
+	</script>
+</body>
+</html>

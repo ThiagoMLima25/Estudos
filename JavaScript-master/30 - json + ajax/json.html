@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="obj"></p>
+<p id="array"></p>
+
+    <script>
+    /*
+    	Você pode solicitar o JSON do servidor usando uma solicitação AJAX - Asynchronous JavaScript And XML.
+
+    	Contanto que a resposta do servidor seja gravada no formato JSON, você poderá analisar a sequência em um objeto JavaScript.
+    */
+
+    /*
+        O objeto XMLHttpRequest pode ser usado para solicitar dados de um servidor da web. 
+        Como:
+            -> Atualizar uma página da web sem recarregar a página
+            -> Solicitar dados de um servidor - após a página ter sido carregada
+            -> Receber dados de um servidor - após a página ter sido carregada
+            -> Enviar dados para um servidor - em segundo plano
+    */
+
+    //Cria um objeto XMLHttpRequest
+    var xmlhttp = new XMLHttpRequest();
+
+    //A propriedade onreadystatechange especifica uma função a ser executada toda vez que o status do objeto XMLHttpRequest for alterado
+
+    xmlhttp.onreadystatechange = function() {
+    /*
+      ---- Status HTTP ----
+        200 O servidor retornou a página com sucesso
+        201 A solicitação foi bem-sucedida e o servidor criou um novo recurso.
+        204 O servidor processou a solicitação com sucesso, mas não está retornando nenhum conteúdo
+        304 Não modificado
+        400 Requisição inválida
+        401 Não autorizado
+        403 Proibido
+        404 A página solicitada não existe
+        409 Conflito
+        500 Erro interno do servidor
+
+        readyState retorna o estado de um XMLHttpRequest:
+        0   UNSENT           -> Um cliente foi criado. Mas o método open()  não foi chamado ainda.
+        1   OPENED           -> O método open() foi chamado.
+        2   HEADERS_RECEIVED -> O método send() foi chamado e os cabeçalhos e status estão disponíveis.
+        3   LOADING          -> Baixando e responseText contem os dados parciais.
+        4   DONE             -> Operação concluída.
+    */
+        if (this.readyState == 4 && this.status == 200) {
+            //responseText retorna o texto recebido de um servidor após uma solicitação ser enviada.
+            var myObj = JSON.parse(this.responseText);
+            document.getElementById("obj").innerHTML = myObj.name;
+        }
+    };
+    //O método open inicializa uma solicitação recém-criada ou reinicializa uma existente.
+    //open( método , url , assíncrono , usuário(opcional) , senha(opcional))
+    xmlhttp.open("GET", "json_demo.json", true);
+
+    //O método send envia a requisição para o servidor
+    /*
+        send() -> Usado na requisição GET
+        send(string) -> Usado na requisição POST
+    */    
+    xmlhttp.send();
+
+    </script>
+
+    <script>
+    //Array
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            document.getElementById("array").innerHTML = myArr[0];
+        }
+    };
+    xmlhttp.open("GET", "json_array.json", true);
+    xmlhttp.send();
+
+    </script>
+</body>
+</html>

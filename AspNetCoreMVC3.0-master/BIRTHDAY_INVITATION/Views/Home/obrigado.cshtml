@@ -1,0 +1,18 @@
+﻿@model BIRTHDAY_INVITATION.Models.Home
+
+@{
+    ViewData["Title"] = "obrigado";
+}
+
+<h1>Obrigado pelo seu registro, @Model.name .</h1>
+
+@if (Model.answer == true)
+{
+    <p>Seja bem vindo a nossa festa. Estaremos lhe aguardando...</p>
+}
+else
+{
+    <p>Que pena não contar com sua presença.</p>
+}
+
+<div>Clique <a asp-action="confirmados">aqui</a>  para visualizar a lista de convidados confirmados.</div>

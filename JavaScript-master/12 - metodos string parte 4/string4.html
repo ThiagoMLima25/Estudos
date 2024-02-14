@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos strings parte 4</title>
+</head>
+<body>
+	
+	<button onclick="upper()">Maiúsculo</button>
+	<button onclick="lower()">Minúsculo</button>
+	
+	<p id="txt">as maiores empresas do mundo!</p>
+	<br>
+	Concatenando as strings.
+	<p id="txt3">um novo dia.</p>
+	<p id="txt2">nasce</p>
+	<p id="txt1">Hoje</p>
+	<br>
+	Mensagem:
+	<p id="paragrafo"></p>
+	<script type="text/javascript">
+		/*
+			Uma string é convertida para maiúscula com toUpperCase()
+			Uma string é convertida para minúscula com toLowerCase()
+		*/
+		function upper(){
+			var txt = document.getElementById('txt').innerHTML;
+			document.getElementById('txt').innerHTML = txt.toUpperCase();
+		}
+
+		function lower(){
+			var txt = document.getElementById('txt').innerHTML;
+			document.getElementById('txt').innerHTML = txt.toLowerCase();
+		}
+
+		/*
+			O método concat() junta duas ou mais strings
+		*/
+		var txt1 = document.getElementById("txt1").innerHTML;
+		var txt2 = document.getElementById("txt2").innerHTML;
+		var txt3 = document.getElementById("txt3").innerHTML;
+
+		var string = txt1.concat(" "+ txt2 + " " + txt3);
+		document.getElementById("paragrafo").innerHTML = string;	
+	</script>
+</body>
+</html>

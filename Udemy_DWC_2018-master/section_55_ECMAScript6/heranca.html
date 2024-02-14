@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <!-- Necessário caso vá trabalhar com Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+    
+    <script type="text/babel">
+    /*
+     * Herança
+     *
+     * class Mesa{
+     *     
+     * }
+     * 
+     * class MesaDeJantar extends Mesa{
+     *     
+     * }
+     */
+    
+    class Poligono {
+        constructor(lados, altura, largura, nome){
+            this.lados = lados;
+            this.altura = altura;
+            this.largura = largura;
+            this.nome = nome;
+        }
+
+        escreverCaracteristicas(){
+            console.log(`Eu sou um ${this.nome} tenho ${this.lados} lados e tenho a largura de ${this.largura}cm e altrua ${this.altura}cm`);
+        }
+    }
+
+    class Quadrado extends Poligono {
+        constructor(altura, largura){
+            super(4, altura, largura, "Quadrado");
+        }
+    }
+    
+    var pentagono = new Poligono(5, 5, 5, "Pentagono");
+    pentagono.escreverCaracteristicas();
+
+    var hexagono = new Poligono(6, 10, 8, "hexagono");
+    hexagono.escreverCaracteristicas();
+
+    var quadrado = new Quadrado(5, 5);
+    quadrado.escreverCaracteristicas();
+
+</script>
+</html>

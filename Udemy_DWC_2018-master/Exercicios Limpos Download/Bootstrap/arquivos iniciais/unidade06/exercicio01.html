@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Curso de Bootstrap</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="_css/estilo.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Digite abaixo seu codigo -->
+        <div class="container">
+            <form>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Nome"/>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Email"/>
+                
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Senha"/>  
+                
+                <label for="selecao">Prato preferido?</label>
+                <select id="selecao">
+                    <option>Escolha uma opção</option>
+                    <option>Feijoada</option>
+                    <option>Churrasco</option>
+                    <option>Sushi</option>
+                    <option>Pizza</option>
+                </select>
+                
+                <label for="comentario">Comentários</label>
+                <textarea id="comentario"></textarea>
+                
+                <label for="lista">
+                    <input type="checkbox" id="lista">Inscrever-me na newsletter
+                </label>
+                
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <!-- Fim do seu codigo -->
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="_js/script.js"></script>
+    </body>
+</html>

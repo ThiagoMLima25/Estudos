@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funções</title>
+</head>
+<body>
+
+<button type="button" onclick="callfunction1()">Chamar primeira função</button>
+<button type="button" onclick="callfunction2()">Chamar segunda função</button>
+
+<br><br>
+
+<input type="text" name="var1" id="var1"> +
+<input type="text" name="var2" id="var2">
+<button type="button" onclick="callfunction3()">Resultado</button>	
+<p id="resultado"></p>
+
+<p id="auto"></p>
+	<script type="text/javascript">
+	/*
+		Parâmetros de função são os nomes listados na definição da função.
+		Argumentos de função são os valores reais passados ​​para (e recebidos pela) função.
+	*/
+		var txt = "txt -> Variável Global"; //Variável Global
+
+		function callfunction1()
+		{	var txt2 = "txt2 -> Variável local da primeira função";
+			document.write(txt + "<br>");
+			document.write(txt2);
+		}
+
+		function callfunction2()
+		{
+			var txt2 = "txt2 -> Variável local da segunda função";
+			document.write(txt + "<br>");
+			document.write(txt2);
+		}
+		
+		function callfunction3()
+		{	
+			var var1 = document.getElementById("var1").value;
+			var var2 = document.getElementById("var2").value;		
+			var total = parseInt(var1) + parseInt(var2);
+		
+			document.getElementById("resultado").innerHTML = "O Resultado é igual a" + total;
+		}
+		
+		//função anônima de auto-chamada (função sem nome).
+		(function () {
+    		document.getElementById("auto").innerHTML = "Olá! Eu me auto invoquei. :)";
+		})();
+		/*
+		---------- A vida útil das variáveis ​​JavaScript ----------
+		O tempo de vida de uma variável JavaScript começa quando é declarado.
+
+		As variáveis ​​locais são excluídas quando a função é concluída.
+
+		Em um navegador da Web, as variáveis ​​globais são excluídas quando você fecha a janela do navegador (ou guia),
+		mas permanece disponível para novas páginas carregadas na mesma janela.
+
+		*/
+	</script>
+</body>
+</html>

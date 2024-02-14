@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <!-- Necessário caso vá trabalhar com Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+    
+    <script type="text/babel">
+    /*
+     * Class foi introduzido de uma maneira mais padronizada no ECMAScript6
+     * class produto{
+     *      constructor(nome, preco){
+     *          this.nome = nome;
+     *          this.preco = preco;
+     *      }
+     *      
+     *      var caneta = new produto();
+     *      caneta.nome = "Caneta Bic";
+     *      caneta.preco = 3;
+     * }
+     */
+
+     class Produto{
+         constructor(nome, preco){
+            this.nome = nome;
+            this.preco = preco;
+         }
+
+         escreverDados(){
+             console.log(`Minha ${this.nome} custa ${this.preco} reais`);
+         }
+     }
+
+     var caneta = new Produto("Caneta Bic", 3);
+     caneta.escreverDados();
+
+
+</script>
+</html>

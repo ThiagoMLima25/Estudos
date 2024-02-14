@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="shift"></p>
+	<p id="shift2"></p>
+	<br>
+	<button onclick="add()">Adicionar utilizando Unshift</button>
+	<p id="unshift"></p>
+	
+	<p>**** Alterando elementos de uma Matriz ****</p>
+	<p><span id="original"></span></p>
+	<p><span id="alterado"></span></p>
+	<script type="text/javascript">
+	/*
+		Shift é equivalente a pop, trabalhando no primeiro elemento em vez do último.
+		O método shift remove o primeiro elemento da matriz e "desloca" todos os outros elementos para um índice inferior.
+	*/
+
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("shift").innerHTML = fruits;
+	fruits.shift();
+	document.getElementById("shift2").innerHTML = fruits;
+
+	//O método unshift adiciona um novo elemento a um array (no começo) e "unshifts" elementos antigos.
+	var fruit = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("unshift").innerHTML = fruit;
+
+	function add() {
+	    fruit.unshift("Lemon");
+	    document.getElementById("unshift").innerHTML = fruit;
+	}
+
+	//Alterando elementos na matriz
+	var obj = ["Caneta","Lápis","Apontador","Caderno"];
+	document.getElementById("original").innerHTML = obj;
+	obj[0] = "Canetinha";
+	document.getElementById("alterado").innerHTML = obj;
+
+	/*
+	Como as matrizes JavaScript são objetos, os elementos podem ser excluídos usando o operador JavaScript delete.
+	Usar a exclusão pode deixar furos indefinidos na matriz. Use pop ou shift.
+	Existem outros metodos utilizando matrizes...
+	*/
+	</script>
+</body>
+</html>

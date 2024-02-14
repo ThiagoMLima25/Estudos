@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Eventos</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<button>Clique duas vezes para o botão sumir!</button>
+	<p>
+		<img src="img/Frajola.png">
+		<p class="msg">
+	</p>
+	<p>
+		Nome: <input type="text" name="nome">	Sobrenome: <input type="text" name="sobrenome">		
+	</p>
+	<p class="on">Clique em mim para esconder com o metodo on</p>
+</body>
+	<script type="text/javascript">
+			/*
+			*	Todas as ações do visitante diferentes às quais uma página da Web pode responder são chamadas de eventos.
+			*/
+			$(document).ready(function(){
+				//dblclick -> Método de duplo clique
+				$('button').dblclick(function(){
+					$(this).hide();
+				});	
+			});
+
+			$(document).ready(function(){
+				//mouseenter -> Método acionado ao entrar em um elemento
+				$('img').mouseenter(function(){
+					$('.msg').html('O mouse entrou na imagem do frajola!');
+				});	
+			});
+
+			$(document).ready(function(){
+				//mouseleave -> Método acionado ao sair de um elemento
+				$('img').mouseleave(function(){
+					$('.msg').html('O mouse saiu da imagem do frajola!');
+				});
+			});
+
+			$(document).ready(function(){
+				//focus -> Método executado quando input recebe foco
+				$('input').focus(function(){
+					$(this).css('backgroundColor','blue');
+				});
+				//blur -> Método executado quando input prede foco
+				$('input').blur(function(){
+					$(this).css('backgroundColor','white');
+				});
+			});
+
+			$(document).ready(function(){
+				//O método on anexa um ou mais manipuladores de eventos para os elementos selecionados.
+				$('.on').on('click',function(){
+					$(this).hide();
+				});
+			});
+
+			/**
+			*	Method/Property							Description
+			*	blur()									Attaches/Triggers the blur event
+				change()								Attaches/Triggers the change event
+				click()									Attaches/Triggers the click event
+				dblclick()								Attaches/Triggers the double click event
+				event.currentTarget						The current DOM element within the event bubbling phase
+				event.data								Contains the optional data passed to an event method when the current executing handler is bound
+				event.delegateTarget					Returns the element where the currently-called jQuery event handler was attached
+				event.isDefaultPrevented()				Returns whether event.preventDefault() was called for the event object
+				event.isImmediatePropagationStopped()	Returns whether event.stopImmediatePropagation() was called for the event object
+				event.isPropagationStopped()			Returns whether event.stopPropagation() was called for the event object
+				event.namespace							Returns the namespace specified when the event was triggered
+				event.pageX								Returns the mouse position relative to the left edge of the document
+				event.pageY								Returns the mouse position relative to the top edge of the document
+				event.preventDefault()					Prevents the default action of the event
+				event.relatedTarget						Returns which element being entered or exited on mouse movement.
+				event.result							Contains the last/previous value returned by an event handler triggered by the specified event
+				event.stopImmediatePropagation()		Prevents other event handlers from being called
+				event.stopPropagation()					Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event
+				event.target							Returns which DOM element triggered the event
+				event.timeStamp							Returns the number of milliseconds since January 1, 1970, when the event is triggered
+				event.type								Returns which event type was triggered
+				event.which								Returns which keyboard key or mouse button was pressed for the event
+				focus()									Attaches/Triggers the focus event
+				focusin()								Attaches an event handler to the focusin event
+				focusout()								Attaches an event handler to the focusout event
+				hover()									Attaches two event handlers to the hover event
+				keydown()								Attaches/Triggers the keydown event
+				keypress()								Attaches/Triggers the keypress event
+				keyup()									Attaches/Triggers the keyup event
+				mousedown()								Attaches/Triggers the mousedown event
+				mouseenter()							Attaches/Triggers the mouseenter event
+				mouseleave()							Attaches/Triggers the mouseleave event
+				mousemove()								Attaches/Triggers the mousemove event
+				mouseout()								Attaches/Triggers the mouseout event
+				mouseover()								Attaches/Triggers the mouseover event
+				mouseup()								Attaches/Triggers the mouseup event
+				off()									Removes event handlers attached with the on() method
+				on()									Attaches event handlers to elements
+				one()									Adds one or more event handlers to selected elements. This handler can only be triggered once per element
+				$.proxy()								Takes an existing function and returns a new one with a particular context
+				ready()									Specifies a function to execute when the DOM is fully loaded
+				resize()								Attaches/Triggers the resize event
+				scroll()								Attaches/Triggers the scroll event
+				select()								Attaches/Triggers the select event
+				submit()								Attaches/Triggers the submit event
+			*/
+	</script>
+</html>

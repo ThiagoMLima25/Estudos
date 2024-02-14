@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Comandos utilizados - SQL</title>
+</head>
+<body>
+    <!-- 
+    SELECT's
+        //Seleciona as colunas da tabela produtos
+        SELECT nomeProduto, codigobarra, categoriaID FROM produtos
+        
+        //Seleciona os valores de tempo de entrega distintos da tabela produtos
+        SELECT DISTINCT(tempoentrega) FROM produtos 
+
+        //Seleciona as colunas referenciadas da tabela produtos ordenando pelo Id de forma decrescente limitando o valor da busca em 10 itens
+        SELECT nomeProduto, codigobarra, categoriaID FROM produtos ORDER BY produtoID DESC LIMIT 10
+        
+        //Seleciona as colunas referenciadas da tabela produtos e ordena pelo nome do produto de forma crescente limitando o valor da busca em 10 itens
+        SELECT nomeProduto, codigobarra, categoriaID FROM produtos ORDER BY nomeproduto ASC LIMIT 10
+        
+        //Seleciona as colunas referenciadas da tabela produtos e ordena pelo preco e tempo de entrega de forma crescente limitando o valor da busca em 10 itens
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos ORDER BY precounitario ASC, tempoentrega ASC LIMIT 10    
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o tempo da entrega for igual ao valor determinado
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE tempoentrega = 5
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o tempo da entrega e preco forem iguais aos valores determinado
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE tempoentrega = 5 AND precounitario = 5
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o preco for menor ao valor determinado
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE precounitario < 17
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o preco for entre os valores determinados
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE precounitario BETWEEN 5 AND 17
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o preco for entre os valores determinados e ordena pelo preco unitario de forma crescente
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE precounitario BETWEEN 5 AND 17 ORDER BY precounitario ASC
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o tempo de entrega for um valor ou outro
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE tempoentrega = 5 OR tempoentrega = 30
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o tempo de entrega for igual os valores determinados
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE tempoentrega IN(5,30)
+        
+        //Seleciona as colunas referenciadas da tabela produtos onde o tempo de entrega não for igual os valores determinados
+        SELECT nomeProduto, precounitario, tempoentrega FROM produtos WHERE tempoentrega NOT IN(5,30)
+    -->
+</body>
+</html>

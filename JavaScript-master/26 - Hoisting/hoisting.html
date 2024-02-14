@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hoisting</title>
+</head>
+<body>
+	<p id="resultado"></p>
+	<script type="text/javascript">
+	/*
+		Em JavaScript, uma variável pode ser declarada depois de ter sido usada.
+		Em outras palavras, uma variável pode ser usada antes de ser declarada.
+	*/
+		x = 5; 
+
+		elem = document.getElementById("resultado");
+		elem.innerHTML = x;                     
+
+		var x;
+
+	/*
+		O Hoisting é (para muitos desenvolvedores) um comportamento desconhecido ou ignorado do JavaScript.
+		Se um desenvolvedor não entender o Hoisting, os programas podem conter erros.
+		Para evitar erros, sempre declare todas as variáveis ​​no início de cada escopo.
+	*/	
+	</script>
+</body>
+</html>

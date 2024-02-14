@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objetos</title>
+</head>
+<body>
+	<p id="dados"></p>
+	<p id="dados2"></p>
+	<p id="call"></p>
+	<script type="text/javascript">
+		/*
+			Use literais de objeto {} em vez de new Object().
+			Use literais de string "" em vez de new String().
+			Use números literais 12345 em vez de new Number().
+			Use literais booleanos true/false em vez de new booleano().
+			Use array literals [] em vez de new Array().
+			Use padrões literais /()/ em vez de new RexExp().
+			Use a função function(){} em vez da new function().
+		*/
+		//Basicamente os objetos JavaScript são contêineres para valores nomeados.
+		var pessoa = {
+			nome:"Thiago",
+			idade: 24,
+			nascimento:"25/09/1993"
+		};
+
+		document.getElementById("dados").innerHTML = "Meu nome é "+ pessoa.nome + " e tenho "+ pessoa.idade +
+		" anos. Minha data de Nascimento é "+ pessoa.nascimento +".";
+
+		//Acessando o mesmo objeto por metodo.
+		var pessoa2 = {
+			nome:"Thiago",
+			idade: 24,
+			nascimento:"25/09/1993",
+			mensagem: function()
+			{
+				return "Meu nome é "+ this.nome + " e tenho "+ this.idade +
+				" anos. Minha data de Nascimento é "+ this.nascimento +". (Acessado pelo metodo.)";
+			}
+			/*
+				A propriedade mensagem é um método do objeto pessoa2.
+				O objeto pessoa2 é o proprietário do método.
+			*/
+		};	
+
+		document.getElementById("dados2").innerHTML = pessoa2.mensagem();
+		
+		/*
+			O método call() é um método de função JavaScript predefinido.
+			Com call(), você pode usar um método pertencente a outro objeto.
+		*/	
+		var novoObj = {
+			nome:"Maria",
+			idade: 25,
+			nascimento:"23/09/1993",
+		};
+
+		var x = pessoa2.mensagem.call(novoObj);
+		document.getElementById("call").innerHTML = x; 
+	</script>
+</body>
+</html>

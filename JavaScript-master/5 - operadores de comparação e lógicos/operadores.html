@@ -1,0 +1,53 @@
+<!DOCTYPE >
+<html>
+<head>
+	<title>Operadores Lógicos e de Comparação</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		------ Operador de Comparação ------
+			Operador		Descrição
+			   ==		 	 igual a
+			   ===		valor e tipo igual 
+			   !=			diferente
+			   !==	  valor ou tipo diferente
+			   >			maior que
+			   <			menor que
+			   >=		  maior ou igual 
+			   <=		  menor ou igual
+
+		------ Operador Lógico ------
+			Operador		Descrição
+			   &&			   and
+			   ||			   or
+			   !			   not
+		*/
+		document.write("Primeira estrutra de condição (if else) utilizando operadores de comparação<br><br>");
+		var x = "10";
+		// x = 10 -> valor do tipo inteiro
+		// x = "10" -> valor do tipo string 
+		if(x === 10)
+		{
+			document.write("O valor de x é 10");
+		}
+		else{
+			document.write("O valor de x não é 10");
+		}
+		
+		document.write("<br><br>");
+		document.write("Segunda estrutra de condição (if else) utilizando operadores Lógicos<br><br>");
+		var y = 4;
+		var z = 10;
+
+		if(y === 5 && z === 10)
+		{
+			document.write("Os valores de y e z coincidem");
+		}
+		else{
+			document.write("Os valores de y e z não coincidem");
+		}
+
+	</script>
+</body>
+</html>

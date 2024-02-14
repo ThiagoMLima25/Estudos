@@ -1,0 +1,60 @@
+﻿body {
+    color: white;
+}
+
+/* Header, Footer */
+.header, .footer {
+    background-color: black;
+    color: white;
+}
+
+    .header a {
+        text-decoration: none;
+        color: rgb(200, 200, 200);
+    }
+
+        .header a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
+/* navegation */
+.navegation {
+    background-color: black;
+    border-top: solid rgb(200, 200, 200);
+    border-bottom: solid rgb(200, 200, 200);
+}
+
+.navegation a {
+    padding: 0px 20px;
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+}
+
+.navegation a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* content */
+.content {
+    background-color: white;
+    color:black;
+}
+
+.social a {
+    font-size: 2em;
+    padding: 0px 20px;
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+}
+
+.social a:hover {
+    text-decoration: none;
+    color: white;
+}

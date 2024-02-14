@@ -1,0 +1,16 @@
+	{ "name":"John" }
+		
+	{ "age":30 }
+		
+	{
+		"funcionarios":{ "name":"John", "age":30, "city":"New York" }
+	}
+
+	{
+		"funcionarios":[ "John", "Anna", "Peter" ]
+	}
+
+	{ "venda":true }
+
+	{ "nome":null }
+ 

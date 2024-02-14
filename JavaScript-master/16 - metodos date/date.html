@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos Date</title>
+</head>
+	<body>
+		Ano: <span id="ano"></span>
+		<br>
+		Mes: <span id="mes"></span>
+		<br>
+		Dia: <span id="dia"></span>
+		<br>
+		Hora: <span id="hora"></span>
+		<br>
+		Minutos: <span id="minuto"></span>
+		<br>
+		Segundos: <span id="segundos"></span>
+		<br>
+		Dia da Semana: <span id="semana"></span>
+		<br>		
+		<script type="text/javascript">
+		//O método getFullYear retorna o ano de uma data como um número de quatro dígitos
+			var date_year = new Date();
+			document.getElementById("ano").innerHTML = date_year.getFullYear();
+		
+		//O método getMonth retorna o mês de uma data como um número (0-11)
+		//Em JavaScript, o primeiro mês (janeiro) é o mês número 0, então dezembro retorna o mês número 11.
+			var date_moth = new Date();
+			var months = ["January","Februrar","March","April","May","June","July","August","September","October","November","December"];
+			document.getElementById("mes").innerHTML = months[date_moth.getMonth()];
+
+		//O método getDate retorna o dia de uma data como um número (1-31)
+			var dia = new Date();
+			document.getElementById("dia").innerHTML = dia.getDate();
+
+		//O método getHours retorna as horas de uma data como um número (0-23)
+			var hora = new Date();
+			document.getElementById("hora").innerHTML = hora.getHours();
+
+		//O método getMinutes retorna os minutos de uma data como um número (0-59):
+			var minuto = new Date();
+			document.getElementById("minuto").innerHTML = minuto.getMinutes();
+		
+		//O método getSeconds retorna os segundos de uma data como um número (0-59)
+			var segundos = new Date();
+			document.getElementById("segundos").innerHTML = segundos.getSeconds();
+
+		/*
+			O método getDay retorna o dia da semana de uma data como um número (0-6)
+			Em JavaScript, o primeiro dia da semana (0) significa "domingo", mesmo que alguns países do mundo considerem o primeiro dia da semana como "segunda-feira".
+		*/
+			var semana = new Date();
+			var se = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sabádo","Domingo"];
+			document.getElementById("semana").innerHTML = se[semana.getDay()];
+
+			//Existem outros metodos além dos apresentados...
+		</script>
+	</body>
+</html>

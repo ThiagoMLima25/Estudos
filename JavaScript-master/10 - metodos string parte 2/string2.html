@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos strings parte 2</title>
+</head>
+<body>
+---- Metodo slice ----
+	<p id="slicePositivo"></p>
+	<p id="sliceNegativo"></p>
+	<p id="slice"></p>
+---- Metodo substr ----
+	<p id="substr"></p>
+	<script type="text/javascript">
+		/*
+			O método slice() extrai uma parte de uma string e retorna a parte extraída em uma nova string.
+			O método leva 2 parâmetros: o índice inicial (posição) e o índice final (posição).
+		*/
+		var string = "trabalhando com metodos strings";
+		var res = string.slice(7,14);
+		document.getElementById("slicePositivo").innerHTML = res;
+
+		//Se um parâmetro for negativo, a posição é contada a partir do final da string
+		var string2 = "trabalhando com metodos strings";
+		var res2 = string2.slice(-17,-4);
+		document.getElementById("sliceNegativo").innerHTML = res2;
+
+		//Se você omitir o segundo parâmetro, o método dividirá o restante da string:
+		var string3 = "trabalhando com metodos strings";
+		var res3 = string3.slice(15);
+		document.getElementById("slice").innerHTML = res3;
+
+		//Posições negativas não funcionam no Internet Explorer 8 e anteriores
+		/*
+			O metodo substring() é semelhante a slice(). A diferença é que substring() não pode aceitar índices negativos.
+		*/
+	</script>
+	<script type="text/javascript">
+		/*
+			O metodo substr() é semelhante a slice().
+			A diferença é que o segundo parâmetro especifica o comprimento da parte extraída.
+			Se o primeiro parâmetro for negativo, a posição conta a partir do final da string.
+			O segundo parâmetro não pode ser negativo, porque define o comprimento.
+			Se você omitir o segundo parâmetro, substr() apresenta o restante da string.
+		*/
+		var stringSubstr = "trabalhando com metodos strings";
+		var res4 = stringSubstr.substr(12, 5);
+		document.getElementById("substr").innerHTML = res4;
+	</script>
+</body>
+</html>

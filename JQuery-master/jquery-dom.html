@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulação de jQuery DOM</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<p id="test">Texto no método alarm com os elementos bold <b>HTML e Text</b></p>
+
+	<button id="btn1">Apresentar Text</button>
+	<button id="btn2">Apresentar HTML</button>
+
+	<p>Nome: <input type="text" id="txtInput" value="Mickey Mouse"></p>
+	<button class="btnVal">Valor</button>
+
+	<p><a href="https://www.youtube.com" id="url">Para qual página eu vou lhe redirecionar?</a></p>
+	<button class="attVal">Apresentar valor do atributo</button>
+
+	<p id="test1">Este é um paragráfo.</p>
+	<p id="test2">Este é outro parágrafo.</p>
+
+	<p>Campo de entrada: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+	<button id="btn3">Alterar Text</button>
+	<button id="btn4">Alterar HTML</button>
+	<button id="btn5">Alterar Value</button>
+
+	<p><a href="https://www.youtube.com" id="youtube">youtube.com</a></p>
+
+	<button id="changeHref">Mudar valor do href</button>
+</body>
+<script type="text/javascript">
+	/**
+	*	Obter conteúdo - text(), html() e val()
+	*	Três métodos simples, mas úteis, do jQuery para manipulação de DOM são:
+	*
+	*	text() - Define ou retorna o conteúdo de texto dos elementos selecionados
+	*	html() - Define ou retorna o conteúdo dos elementos selecionados (incluindo marcação HTML)
+	*	val() - Define ou retorna o valor dos campos de formulário
+	*/
+
+	$(document).ready(function(){
+	    $("#btn1").click(function(){
+	        alert("Text: " + $("#test").text());
+	    });
+	    $("#btn2").click(function(){
+	        alert("HTML: " + $("#test").html());
+	    });
+	});
+
+	$(document).ready(function(){
+	    $(".btnVal").click(function(){
+	        alert("Valor: " + $("#txtInput").val());
+	    });
+	});
+
+	/**
+	*	O método attr() do jQuery é usado para obter valores de atributos.
+	*/
+	$(document).ready(function(){
+	    $(".attVal").click(function(){
+	        alert($("#url").attr("href"));
+	    });
+	});
+	
+	$(document).ready(function(){
+	    $("#btn3").click(function(){
+	        $("#test1").text("<b>Hello world!<b>");
+	    });
+	    $("#btn4").click(function(){
+	        $("#test2").html("<b>Hello world!</b>");
+	    });
+	    $("#btn5").click(function(){
+	        $("#test3").val("Duck");
+	    });
+	});
+
+	/**
+	*	O método attr() do jQuery também é usado para definir/alterar valores de atributos. Ele também permite definir vários atributos ao mesmo tempo.
+	*/
+	$(document).ready(function(){
+		$('#changeHref').on('click',function(){
+			$('#youtube').attr('href','https://www.google.com');
+		});
+	});
+
+	/**
+		Method			Description
+		addClass()		Adds one or more class names to selected elements
+		after()			Inserts content after selected elements
+		append()		Inserts content at the end of selected elements
+		appendTo()		Inserts HTML elements at the end of selected elements
+		attr()			Sets or returns attributes/values of selected elements
+		before()		Inserts content before selected elements
+		clone()			Makes a copy of selected elements
+		css()			Sets or returns one or more style properties for selected elements
+		detach()		Removes selected elements (keeps data and events)
+		empty()			Removes all child nodes and content from selected elements
+		hasClass()		Checks if any of the selected elements have a specified class name
+		height()		Sets or returns the height of selected elements
+		html()			Sets or returns the content of selected elements
+		innerHeight()	Returns the height of an element (includes padding, but not border)
+		innerWidth()	Returns the width of an element (includes padding, but not border)
+		insertAfter()	Inserts HTML elements after selected elements
+		insertBefore()	Inserts HTML elements before selected elements
+		offset()		Sets or returns the offset coordinates for selected elements (relative to the document)
+		offsetParent()	Returns the first positioned parent element
+		outerHeight()	Returns the height of an element (includes padding and border)
+		outerWidth()	Returns the width of an element (includes padding and border)
+		position()		Returns the position (relative to the parent element) of an element
+		prepend()		Inserts content at the beginning of selected elements
+		prependTo()		Inserts HTML elements at the beginning of selected elements
+		prop()			Sets or returns properties/values of selected elements
+		remove()		Removes the selected elements (including data and events)
+		removeAttr()	Removes one or more attributes from selected elements
+		removeClass()	Removes one or more classes from selected elements
+		removeProp()	Removes a property set by the prop() method
+		replaceAll()	Replaces selected elements with new HTML elements
+		replaceWith()	Replaces selected elements with new content
+		scrollLeft()	Sets or returns the horizontal scrollbar position of selected elements
+		scrollTop()		Sets or returns the vertical scrollbar position of selected elements
+		text()			Sets or returns the text content of selected elements
+		toggleClass()	Toggles between adding/removing one or more classes from selected elements
+		unwrap()		Removes the parent element of the selected elements
+		val()			Sets or returns the value attribute of the selected elements (for form elements)
+		width()			Sets or returns the width of selected elements
+		wrap()			Wraps HTML element(s) around each selected element
+		wrapAll()		Wraps HTML element(s) around all selected elements
+		wrapInner()		Wraps HTML element(s) around the content of each selected element
+	*/
+</script>
+</html>

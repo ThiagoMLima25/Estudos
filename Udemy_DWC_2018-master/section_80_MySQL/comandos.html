@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Comandos utilizados - SQL</title>
+</head>
+<body>
+    <!-- 
+        Seleciona os produtos que terminam com o valor determinado
+        SELECT nomeProduto FROM produtos WHERE nomeProduto LIKE "%mug"
+
+        Seleciona os produtos que começam com o valor determinado
+        SELECT nomeProduto FROM produtos WHERE nomeProduto LIKE "Brave%"
+
+        Seleciona todos os produtos que começam ou terminam com o valor determinado
+        SELECT nomeProduto FROM produtos WHERE nomeProduto LIKE "%andes%"
+
+        //Seleciona o menor preço da coluna determinada da tabela produtos
+        SELECT MIN(precounitario) as menorPreco FROM produtos
+        
+        //Seleciona o maior preço da coluna determinada da tabela produtos
+        SELECT MAX(precounitario) as maiorPreco FROM produtos
+
+        //Seleciona o preço médio da coluna determinada da tabela produtos
+        SELECT AVG(precounitario) as precoMedio FROM produtos
+
+        //Soma dos valores do ano referênciado
+        SELECT SUM(valor_pedido) FROM pedidos WHERE year(data_pedido) = "2006"
+
+        //Soma dos valores do ano referênciado e conta da quantidade de pedidos
+        SELECT SUM(valor_pedido), count(pedidoId) as QtdPedidos FROM pedidos WHERE year(data_pedido) = "2006"
+
+        //Conta a quantidade de produtos no determinado tempo de entrega
+        SELECT COUNT(produtoId) as total FROM produtos WHERE tempoentrega = 5
+        
+        //Agrupa e conta a quantidade de produtos no determinado tempo de entrega
+        SELECT tempoentrega, COUNT(produtoId) as total FROM produtos GROUP BY tempoentrega
+
+        //Agrupa e conta a quantidade de produtos no determinado tempo de entrega exbindo apenas valores iguais ou superior ao valor determinado
+        SELECT tempoentrega, COUNT(produtoId) as total FROM produtos GROUP BY tempoentrega HAVING total >= 5
+
+        //Agrupa e conta a quantidade de produtos no determinado tempo de entrega exbindo apenas valores iguais ou superior ao valor determinado ordenando por tempo de entrega
+        SELECT tempoentrega, COUNT(produtoId) as total FROM produtos GROUP BY tempoentrega HAVING total >= 5 ORDER BY tempoentrega ASC
+
+        //Relacionando as tabelas produtos com fornecedores baseado do id do fornecedores de ambas tabelas
+        SELECT nomeproduto, nomeFornecedor FROM produtos, fornecedores WHERE produtos.fornecedorID = fornecedores.fornecedorID
+
+        //Relacionando as tabelas produtos com fornecedores baseado do id do fornecedores de ambas tabelas utilizando INNER JOIN
+        SELECT nomeproduto, nomeFornecedor FROM produtos INNER JOIN fornecedores ON produtos.fornecedorID = fornecedores.fornecedorID
+
+        //Relacionando as tabelas produtos com fornecedores baseado do id do fornecedores de ambas tabelas utilizando INNER JOIN e Alias para diminuir o código
+        SELECT nomeproduto, nomeFornecedor FROM produtos AS p INNER JOIN fornecedores AS f ON p.fornecedorID = f.fornecedorID
+     -->
+</body>
+</html>

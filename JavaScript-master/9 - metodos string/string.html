@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos strings</title>
+</head>
+<body>
+	Apresenta a quantidade de caracteres escrito.
+	<input type="text" name="txt" id="txt" onkeyup="quantidade()">
+	<p id="var"></p>
+	indexOf
+	<p id="showFirst"></p>
+	lastIndexOf
+	<p id="showLast"></p>
+	search
+	<p id="search"></p>
+
+	<script type="text/javascript">
+		function quantidade(){
+			//Os métodos de string ajudam você a trabalhar com strings.
+			var nome = document.getElementById('txt').value;
+			document.getElementById('var').innerHTML = nome.length;
+		}
+
+	//O método indexOf() retorna o índice (a posição) da primeira ocorrência de um texto especificado em uma string -> A contagem inicia com 0. Se não encontrar retorna -1. Ambos metodos aceitam um segundo parâmetro.
+	var texto = "Localizando a posição do texto";
+	var pos = texto.indexOf("d",10);
+	document.getElementById("showFirst").innerHTML = pos;
+	
+	//O método lastIndexOf() retorna o índice (a posição) da última ocorrência de um texto especificado em uma string -> A contagem inicia com 0. Se não encontrar retorna -1.
+	var texto = "Localizando a posição do texto";
+	var pos = texto.lastIndexOf("d");
+	document.getElementById("showLast").innerHTML = pos;
+	
+	//O método search () pesquisa uma string por um valor especificado e retorna a posição da correspondência
+	var texto = "Localizando a posição do texto";
+	var pos = texto.search("d");
+	document.getElementById("search").innerHTML = pos;
+	
+	/* ------ indexof X search
+	Os dois métodos não são iguais.
+	O método search() não pode pegar um segundo argumento de posição inicial.
+	O método indexOf() não pode receber valores de pesquisa poderosos (expressões regulares).
+
+	*/
+	</script>
+</body>
+</html>

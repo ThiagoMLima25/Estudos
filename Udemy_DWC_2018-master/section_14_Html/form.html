@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        label{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulários</h2>
+    <form action="destino.html" method="POST">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Insira seu nome" required autofocus>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" name="telefone" id="telefone" maxlength="11" size="10">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+    <br><br>
+        <label for="website">Web Site</label>
+        <input type="url" name="website" id="website">
+
+        <label for="aniversario">Aniversário</label>
+        <input type="date" name="aniversario" id="aniversario">
+        
+        <label for="filhos">Filhos</label>
+        <input type="number" name="filhos" id="filhos" min="1" max="7" value="1">
+    <br><br>
+        <input type="submit" value="Enviar" id="enviar" name="enviar">
+    </form>    
+</body>
+</html>

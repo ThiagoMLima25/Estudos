@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript JSON</title>
+</head>
+<body>
+	<p id="show"></p>
+
+	<script type="text/javascript">
+		/*
+		JSON - Java Script Object Notation
+			JSON é um formato para armazenar e transportar dados.
+			O JSON costuma ser usado quando os dados são enviados de um servidor para uma página da web.
+			Um programa JavaScript pode converter facilmente dados JSON em objetos JavaScript nativos.
+		*/
+
+		var carros = '{"esporte":[{"Marca":"Ferrari", "Cor":"Preto", "Ano":"2018"},'+
+					 			'{"Marca":"Porsche", "Cor":"Amarelo", "Ano":"2015"},'+
+					 			'{"Marca":"Lamborghini", "Cor":"Azul", "Ano":"2017"}]}';
+
+		obj = JSON.parse(carros);
+		document.getElementById("show").innerHTML =
+		obj.esporte[0].Marca + " " + obj.esporte[0].Cor + " " + obj.esporte[0].Ano;
+	</script>
+</body>
+</html>

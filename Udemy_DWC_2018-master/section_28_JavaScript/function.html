@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Funções</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+        //Função de execução
+        function writerName(){
+            console.log("THIAGO MARTINS");
+        }
+
+        writerName();
+
+        //Função de Retorno
+        function convertTemperature(celsius){
+            var fah = (celsius * 1.8) + 32;
+            return fah;
+        }
+
+        var fahreinheit = convertTemperature(30);
+        console.log(fahreinheit);
+
+        function dailyCalculate(){
+            return 2000/30;
+        }
+
+        var diaria = dailyCalculate();
+        console.log(Math.round(diaria));
+        console.log(Math.ceil(diaria));
+        console.log(Math.floor(diaria));
+        console.log(diaria.toFixed(3));
+
+        function CalcularSalarioDiario(salario, dias){
+            var bonus = 250;
+
+            if(dias > 25){
+                salario += bonus;
+            }
+            return (salario/dias).toFixed(3);
+        }
+        
+        var valor = CalcularSalarioDiario(5000, 25);
+        console.log(valor);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

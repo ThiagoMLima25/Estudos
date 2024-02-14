@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mega-Sena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var sorteio;
+        var mega = [];
+        
+        var i = 0;
+        while(i < 6){
+            sorteio = Math.ceil(Math.random() * 60);
+
+            if(mega.indexOf(sorteio) < 0){
+                mega.push(sorteio);
+                i++;
+            }
+        }
+
+        function OrderNumber(a, b){
+            return a-b;
+        }
+
+        mega.sort(OrderNumber);
+        console.log(mega);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

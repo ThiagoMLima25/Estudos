@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efeitos de Animação Personalizado</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #janela{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="direita" value="Mover para Direita">
+
+    <div id="janela"></div>
+</body>
+    <script>
+        $(function(){
+            $("#direita").click(moverObj);
+        });
+
+        function moverObj(){
+            $("#janela").animate({left:300}, 1000, "swing");
+        }
+    </script>
+</html>

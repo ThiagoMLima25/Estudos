@@ -1,0 +1,19 @@
+﻿@model List<MODEL_NAVIGATION_DETAILS.Models.Client>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @foreach (var client in Model)
+    {
+    <p>@client.Name - @Html.ActionLink("Detalhes", "detalhes", new { id = client.Id })</p>
+    }
+</body>
+</html>

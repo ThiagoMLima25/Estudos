@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos strings parte 3</title>
+</head>
+<body>
+	<p id="sub">Meu nome é Thiago Martins</p>
+	<button onclick="substituir()">Substituir</button>
+	
+	<br><br>
+
+	<p id="sub2">A Microsoft é uma empresa muito conhecida. Possuindo muitas filias em diversos paises com a logo Microsoft.</p>
+	<button onclick="substituir2()">Substituir</button>
+
+	<script type="text/javascript">
+	/*	
+		O método replace() substitui um valor especificado por outro valor em uma string.
+		O método replace() não altera a string na qual é chamado. Ele retorna uma nova string.
+		Por padrão, no primeiro parâmetro a função faz distinção entre maiúsculas e minúsculas e substitui apenas a primeira correspondência. Para substituir maiúsculas e minúsculas, use uma expressão regular com a flag /i.
+			Ex: txt.replace(/THIAGO MARTINS/i,"Ana Maria");
+				obs:Observe que expressões regulares são escritas sem aspas.
+	*/
+	function substituir(){
+		var txt = document.getElementById("sub").innerHTML;
+		var sub = txt.replace("Thiago Martins","Ana Maria");
+		document.getElementById("sub").innerHTML = sub;
+	}
+
+	//Para substituir todas as palavras, use uma expressão regular com a flag /g (correspondência global)
+	function substituir2(){
+		var txt = document.getElementById("sub2").innerHTML;
+		var sub = txt.replace(/MICROSOFT/ig,"Google");
+		document.getElementById("sub2").innerHTML = sub;
+	}
+	</script>
+</body>
+</html>

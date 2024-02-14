@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encontrar posição de um elemento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #janela{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            border: 5px solid red;
+        }
+
+        #janelinha{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+    <body>
+        <div id="janela">
+            <div id="janelinha"></div>
+        </div>
+    </body>
+    <script>
+    $(function(){
+    //    console.log("Posição top do elemento: "+ $("#janela").position().top); 
+    //    console.log("Posição top do elemento: "+ $("#janela").position().left); 
+    //    console.log("Posição top do elemento: "+ $("#janelinha").offset().top); 
+    //    console.log("Posição top do elemento: "+ $("#janelinha").offset().left); 
+        $("#janelinha").offsetParent().css("background-color","green");
+    });
+    </script>
+</html>

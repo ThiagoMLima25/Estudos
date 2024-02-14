@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var produto = {};
+        
+        produto.nome = "Caneta";
+        produto.preco = 1.99;
+        produto.cor = "Azul";
+
+        var materialEscola = {Caderno:"Star Wars", Caneta: "Bic", Borracha:"Branca"};
+        
+        console.log(produto);
+        console.log(materialEscola);
+
+        function retornarInfo(){
+            return this.nome;
+        }
+        
+        //Definindo um método do objeto
+        produto.info = retornarInfo;
+        console.log(produto.info());
+
+    </script>
+</head>
+<body></body>
+</html>

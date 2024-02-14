@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ajax</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="ajax"></div>
+	<br>
+	<button id="btnGet">HTTP GET</button>
+	<button id="btnPost">HTTP POST</button>
+</body>
+	<script type="text/javascript">
+		/**
+		*	AJAX é a arte de trocar dados com um servidor e atualizar partes de uma página da web - sem recarregar a página inteira.
+		*	AJAX = JavaScript assíncrono e XML.
+		*			
+		*	O jQuery fornece vários métodos para a funcionalidade do AJAX.
+		*	Com os métodos jQuery AJAX, você pode solicitar texto, HTML, XML ou JSON de um servidor remoto usando HTTP Get e HTTP Post
+		*		
+		*	O método load() do jQuery é um método AJAX simples, mas poderoso.
+		*
+		*	O método load() carrega dados de um servidor e coloca os dados retornados no elemento selecionado.
+		*	Sintaxe: $(selector).load(URL,data,callback);
+		*
+		*	O parâmetro de URL obrigatório especifica o URL que você deseja carregar.
+		*	O parâmetro opcional data especifica um conjunto de pares chave/valor de querystring para enviar junto com a solicitação.
+		*	O parâmetro de retorno de chamada opcional é o nome de uma função a ser executada depois que o método load() for concluído.
+		*
+		*	O parâmetro de retorno de chamada opcional especifica uma função de retorno de chamada para ser executada quando o método load () for concluído.
+		*	A função de retorno de chamada pode ter parâmetros diferentes:
+		*
+		*	->	responseTxt - contém o conteúdo resultante se a chamada for bem-sucedida
+		*	->	statusTxt - contém o status da chamada
+		*	->	xhr - contém o objeto XMLHttpRequest
+		*/
+
+		$(document).ready(function(){
+	        $("#ajax").load("test.txt", function(responseTxt, statusTxt, xhr){
+	            if(statusTxt == "success"){
+	                alert("Aquivo externo carregado com sucesso!");
+	            }else if(statusTxt == "error"){
+	                alert("Erro: " + xhr.status + ": " + xhr.statusText);
+	            }
+	        });
+	    });
+
+	    /**
+		*	Os métodos jQuery get() e post() são usados ​​para solicitar dados do servidor com uma solicitação HTTP GET ou POST.
+		*	GET - Solicita dados de um recurso especificado
+		*	POST - Envia dados para serem processados ​​para um recurso especificado
+
+			O GET é basicamente usado apenas para obter (recuperar) alguns dados do servidor. Nota: O método GET pode retornar dados armazenados em cache.
+
+			Sintaxe: $.get(URL,callback);
+			O parâmetro de URL obrigatório especifica o URL que você deseja solicitar, exemplo: GetTest.txt
+			O parâmetro de retorno de chamada opcional é o nome de uma função a ser executada se a solicitação for bem-sucedida.
+	    */
+
+	    $(document).ready(function(){
+		    $("#btnGet").click(function(){
+		//O primeiro parâmetro do callback (data) contém o conteúdo da página solicitada e o segundo parâmetro (status) contém o status da solicitação.    	
+		        $.get("GetTest.txt", function(data, status){
+		            alert("Data: " + data + "\nStatus: " + status);
+		        });
+		    });
+		});
+
+	    /**
+		*   O POST também pode ser usado para obter alguns dados do servidor. No entanto, o método POST NUNCA armazena dados em cache e costuma ser usado
+		*	para enviar dados junto com a solicitação.
+		*
+		*	Sintaxe: $.post(URL,data,callback);
+		*	O parâmetro de URL obrigatório especifica o URL que você deseja solicitar.
+		*	O parâmetro opcional data especifica alguns dados para enviar junto com a solicitação.
+		*	O parâmetro de retorno de chamada opcional é o nome de uma função a ser executada se a solicitação for bem-sucedida.
+	    */
+
+	    $(document).ready(function(){
+		    $("#btnPost").click(function(){
+		        $.post("PostTest.txt", function(data,status){
+		            alert("Data: " + data + "\nStatus: " + status);
+		        });
+		    });
+		});	
+
+	    /*
+			Method				Description
+			$.ajax()			Performs an async AJAX request
+			$.ajaxPrefilter()	Handle custom Ajax options or modify existing options before each request is sent and before they are processed by $.ajax()
+			$.ajaxSetup()		Sets the default values for future AJAX requests
+			$.ajaxTransport()	Creates an object that handles the actual transmission of Ajax data
+			$.get()				Loads data from a server using an AJAX HTTP GET request
+			$.getJSON()			Loads JSON-encoded data from a server using a HTTP GET request
+			$.parseJSON()		Deprecated in version 3.0, use JSON.parse() instead. Takes a well-formed JSON string and returns the resulting JavaScript value
+			$.getScript()		Loads (and executes) a JavaScript from a server using an AJAX HTTP GET request
+			$.param()			Creates a serialized representation of an array or object (can be used as URL query string for AJAX requests)
+			$.post()			Loads data from a server using an AJAX HTTP POST request
+			ajaxComplete()		Specifies a function to run when the AJAX request completes
+			ajaxError()			Specifies a function to run when the AJAX request completes with an error
+			ajaxSend()			Specifies a function to run before the AJAX request is sent
+			ajaxStart()			Specifies a function to run when the first AJAX request begins
+			ajaxStop()			Specifies a function to run when all AJAX requests have completed
+			ajaxSuccess()		Specifies a function to run when an AJAX request completes successfully
+			load()				Loads data from a server and puts the returned data into the selected element
+			serialize()			Encodes a set of form elements as a string for submission
+			serializeArray()	Encodes a set of form elements as an array of names and values
+	    */
+	</script>
+</html>

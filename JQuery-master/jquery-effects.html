@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Effects</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<p>
+		<button id="hide">Hide</button>	<button id="show">Show</button>	
+	</p>
+
+	<p class="frase">Clique nos botões para Esconde e Apresentar esta frase.</p>
+
+	<p>
+		<button class="tog">Toggle</button>
+	</p>
+	<p class="EvtTog">Evento Toggle</p>
+
+	<p>
+		<button class="fadeOut">Fade Out</button> <button class="fadeIn">Fade In</button>
+	</p>
+	<p class="EvtFade">Evento Fade</p>
+
+	<button class="FadeTo">Clque para adicionar o efeito fadeTo nas caixas abaixo</button><br><br>
+	<button class="FadeToggle">Clque para adicionar o efeito fadeToggle nas caixas abaixo</button><br><br>
+	<div style="width: 100%; height: 100px;">
+		<div id="div1" style="width:80px; height:80px; background-color:red; float: left;"></div>
+		<div id="div2" style="width:80px; height:80px; background-color:green; float: left;"></div>
+		<div id="div3" style="width:80px; height:80px; background-color:blue; float: left;"></div>
+	</div>
+	
+	<div style="width: 100%; height: 100px;">
+		<p>Animações</p>
+		<button id="btnAnimation">Iniciar Animação</button>
+		<div class="box" style="background:green; height:100px; width:100px; position:absolute; margin-top: 10px;"></div>
+	</div>
+
+	<div style="width: 100%; height: 100px; margin-top: 80px;">
+		<p>Animações II</p>
+		<button id="btnAnimationII">Iniciar Animação</button>
+		<div class="boxII" style="background:red; height:100px; width:100px; position:absolute; margin-top: 10px;"></div>
+	</div>
+
+</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#hide').click(function(){
+				$('.frase').hide('slow');
+			});
+		});
+
+		$(document).ready(function(){
+			$('#show').click(function(){
+				$('.frase').show(1000);
+			});
+		});
+
+		$(document).ready(function(){
+			$('.tog').click(function(){
+				$('.EvtTog').toggle(1000);
+			});
+		});
+
+		$(document).ready(function(){
+			$('.fadeIn').click(function(){
+				$('.EvtFade').fadeIn();
+			});
+		});
+
+		$(document).ready(function(){
+			$('.fadeOut').click(function(){
+				$('.EvtFade').fadeOut();
+			});
+		});
+
+		$(document).ready(function(){
+		    $(".FadeTo").click(function(){
+		        $("#div1").fadeTo("slow", 0.15);
+		        $("#div2").fadeTo("slow", 0.4);
+		        $("#div3").fadeTo("slow", 0.7);
+		    });
+		})
+		
+		$(document).ready(function(){
+			$(".FadeToggle").click(function(){
+			    $("#div1").fadeToggle(1000);
+			    $("#div2").fadeToggle(2000);
+			    $("#div3").fadeToggle(3000);
+			});
+		});
+		
+		$(document).ready(function(){
+			$('#btnAnimation').click(function(){
+				$('.box').animate({
+					left: '250px',
+		            opacity: '0.5',
+		            height: '150px',
+		            width: '150px'
+				});
+			});
+		});
+
+		$(document).ready(function(){
+		    $("#btnAnimationII").click(function(){
+		        var div = $(".boxII");
+		        div.animate({height: '300px', opacity: '0.4'}, "slow");
+		        div.animate({width: '300px', opacity: '0.8'}, "slow");
+		        div.animate({height: '100px', opacity: '0.4'}, "slow");
+		        div.animate({width: '100px', opacity: '0.8'}, "slow");
+		    });
+		});
+		
+		/**
+		*	Method			Description
+		*	animate()		Runs a custom animation on the selected elements
+		*	clearQueue()	Removes all remaining queued functions from the selected elements
+		*	delay()			Sets a delay for all queued functions on the selected elements
+		*	dequeue()		Removes the next function from the queue, and then executes the function
+		*	fadeIn()		Fades in the selected elements
+		*	fadeOut()		Fades out the selected elements
+		*	fadeTo()		Fades in/out the selected elements to a given opacity
+		*	fadeToggle()	Toggles between the fadeIn() and fadeOut() methods
+		*	finish()		Stops, removes and completes all queued animations for the selected elements
+		*	hide()			Hides the selected elements
+		*	queue()			Shows the queued functions on the selected elements
+		*	show()			Shows the selected elements
+		*	slideDown()		Slides-down (shows) the selected elements
+		*	slideToggle()	Toggles between the slideUp() and slideDown() methods
+		*	slideUp()		Slides-up (hides) the selected elements
+		*	stop()			Stops the currently running animation for the selected elements
+		*	toggle()		Toggles between the hide() and show() methods
+		*/
+	</script>
+</html>

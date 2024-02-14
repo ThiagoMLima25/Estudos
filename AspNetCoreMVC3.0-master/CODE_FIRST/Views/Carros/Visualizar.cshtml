@@ -1,0 +1,16 @@
+﻿@model CODE_FIRST.Models.Car
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+<div class="row">
+    <div class="col-12">
+        @Html.DisplayFor(model => model.Brand)
+        @Html.DisplayFor(model => model.CarName)
+        @Html.DisplayFor(model => model.Year)
+    </div>
+    <div class="col-12 mt-3">
+        <a asp-controller="Carros" asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

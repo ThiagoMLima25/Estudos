@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Effects II</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<button id="btnHide">Método Hide</button> <button id="btnShow">Método Show</button>
+	<p class="p1">Após eu sumir ou aparecer você será alertado!</p>
+
+	<p id="p2">Encadeamento de métodos</p>
+
+	<button id="btn">Clique</button>
+</body>
+	<script type="text/javascript">
+	/**
+	*	Um método Callback é executada depois que o efeito atual é 100% concluído.
+	*	$( seletor ).ação(velocidade, Callback);
+	*/
+
+	$(document).ready(function(){
+		$('#btnHide').click(function(){
+			$('.p1').hide('slow', function(){
+				alert('Alerta executado após o método hide ser concluído.');
+			});
+		});
+
+		$('#btnShow').click(function(){
+			$('.p1').show('slow', function(){
+				alert('Alerta executado após o método show ser concluído.');
+			});
+		});
+	});
+
+	$(document).ready(function(){
+		$(document).ready(function(){
+		    $("#btn").click(function(){
+		        $("#p2").css("color", "red").slideUp(2000).slideDown(2000);
+		    });
+		});
+	});
+	</script>
+</html>

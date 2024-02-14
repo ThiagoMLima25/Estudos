@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="resul"></p>
+	<script type="text/javascript">
+		// A instrução JavaScript for/in percorre as propriedades de um objeto.
+		var txt = "";
+		var carro = {Marca:"Ferrari", Cor:"Vermelha", Ano:2018};
+		var x;
+		for(x in carro)
+		{
+			txt += carro[x] + " ";
+		}
+		document.getElementById('resul').innerHTML = txt;
+	</script>
+</body>
+</html>

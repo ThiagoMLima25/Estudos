@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<h4>View Principal</h4>
+
+@* Value = 100 *@
+<p>Valor: @ViewData["value"]</p>
+
+@* Passar o value para 200 *@
+@{ ViewData["value"] = 200; }
+<p>Valor: @ViewData["value"]</p>
+
+@* Carregar partial view *@
+@Html.Partial("_home")
+
+@* Regressa a view principal *@
+<h4>View Principal</h4>
+<p>Valor: @ViewData["value"]</p>

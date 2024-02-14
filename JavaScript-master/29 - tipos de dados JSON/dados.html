@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dados JSON</title>
+</head>
+<body>
+	<p id="Valor"></p>
+	<script type="text/javascript">
+	/*
+	Em JSON, os valores devem ser um dos seguintes tipos de dados:
+		-> string
+		-> número
+		-> objeto (JSON objeto)
+		-> array
+		-> boolean
+		-> null
+	*/
+	var	myObj = {
+    "name":"John",
+    "age":30,
+    "cars": {
+        "car1":"Ford",
+        "car2":"BMW",
+        "car3":"Fiat"
+    }
+ }
+
+document.getElementById("Valor").innerHTML += myObj.cars["car1"];
+
+	</script>
+</body>
+</html>

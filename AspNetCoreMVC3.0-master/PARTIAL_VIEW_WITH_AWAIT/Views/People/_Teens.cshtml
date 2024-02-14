@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PARTIAL_VIEW_WITH_AWAIT.Models.People>
+
+@if (Model.Any(value => value.PeopleAge < 18))
+{
+    <div class="jumbotron">
+        <p><strong>Total Teens @Model.Count(value => value.PeopleAge < 18)</strong></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PeopleName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PeopleAge)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (item.PeopleAge < 18) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PeopleName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PeopleAge)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.PeopleId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.PeopleId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.PeopleId">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Criação de menus com lista</title>
+	<style type="text/css">
+		ul{
+			margin:0;
+			padding: 0;
+			/*width: 200px;*/
+		}
+
+		li{
+			/*list-style: decimal;*/
+			display: inline-block;
+		}
+
+		li a{
+			/*menu vertical*/
+			/*display: block;*/
+			text-decoration: none;
+			background-color: #09c;
+			margin-bottom: 1px;
+			padding: 5px 3px;
+			color: white;
+			margin-left: -4px;
+		}
+
+		li a:hover{
+			background-color: #6cf;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="http:www.google.com" target="_blank">Google</a></li>
+		<li><a href="http:www.youtube.com" target="_blank">Youtube</a></li>
+		<li><a href="http:www.gmail.com" target="_blank">Gmail</a></li>
+		<li><a href="http:www.globoesporte.com" target="_blank">Globo Esporte</a></li>
+	</ul>
+<br><br>
+	<ul>
+		<li>Brasil</li>
+		<ol>
+			<li>SP</li>
+			<li>RJ</li>
+			<li>MG</li>
+		</ol>
+		<li>Argentina</li>
+		<li>México</li>
+		<li>Angola</li>
+	</ul>
+</body>
+</html>

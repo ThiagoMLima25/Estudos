@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Erros</title>
+</head>
+<body>
+	<p id="erro"></p>
+	<script type="text/javascript">
+		/*
+			A instrução try permite testar um bloco de código quanto a erros.
+			A instrução catch permite lidar com o erro.
+			A instrução throw permite criar erros personalizados.
+			A instrução finally permite executar o código, depois de tentar e capturar, independentemente do resultado.
+			O JavaScript criará um objeto Error com duas propriedades: name e message 
+		*/
+		//adddlert produz deliberadamente um erro
+
+		try {
+		    adddlert("Welcome guest!");
+		}
+		catch(err) {
+		    document.getElementById("erro").innerHTML = err.message;
+		}
+	</script>
+
+	<p>Por favor insirá um número entre 5 e 10:</p>
+
+	<input id="demo" type="text">
+	<button type="button" onclick="myFunction()">Validar</button>
+	<p id="message"></p>
+
+	<script>
+	/*
+		A instrução throw permite criar um erro personalizado.
+		Tecnicamente você pode lançar uma exceção. 
+		A exceção pode ser uma string JavaScript, um número, um booleano ou um objeto
+
+		Seis propriedades retornam um erro:
+		Error Name			Description
+		EvalError			An error has occurred in the eval() function
+		RangeError			A number "out of range" has occurred
+		ReferenceError		An illegal reference has occurred
+		SyntaxError			A syntax error has occurred
+		TypeError			A type error has occurred
+		URIError			An error in encodeURI() has occurred
+
+		Versões mais recentes do JavaScript não lançam nenhum EvalError. Use SyntaxError.
+	*/	
+	function myFunction() {
+	    var message, x;
+	    message = document.getElementById("message");
+	    message.innerHTML = "";
+	    x = document.getElementById("demo").value;
+	    try { 
+	        if(x == "") throw "vazio";
+	        if(isNaN(x)) throw "Não é um número";
+	        x = Number(x);
+	        if(x < 5) throw "Muito baixo";
+	        if(x > 10) throw "Muito alto";
+	    }
+	    catch(err) {
+	        message.innerHTML = "O erro é " + err;
+	    }
+	}
+	//A instrução finally permite executar o código, depois de tentar capturar, independentemente do resultado
+	</script>
+</body>
+</html>

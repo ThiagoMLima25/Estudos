@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "defaultProvider": "filesystem",
+  "libraries": [
+    {
+      "library": "wwwroot/lib/bootstrap/dist/js/",
+      "destination": "wwwroot/js/"
+    },
+    {
+      "library": "wwwroot/lib/bootstrap/dist/css/",
+      "destination": "wwwroot/css/",
+      "files": [
+        "bootstrap.min.css"
+      ]
+    },
+    {
+      "library": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "destination": "wwwroot/bootstrap.min/",
+      "files": [
+        "bootstrap.min.js"
+      ]
+    }
+  ]
+}

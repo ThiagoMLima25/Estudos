@@ -1,0 +1,24 @@
+﻿@model MODEL_FORM.Models.Client
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form asp-controller="Home" asp-action="edit" method="post">
+        @Html.HiddenFor(model => model.Id)
+        <div>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.TextBoxFor(model => model.PhoneNumber)
+            <button>Save</button>
+        </div>
+        <a asp-controller="Home" asp-action="index">Cancelar</a>
+    </form>
+</body>
+</html>

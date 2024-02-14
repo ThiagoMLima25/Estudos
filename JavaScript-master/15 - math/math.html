@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>math</title>
+</head>
+<body>
+	Valor Pi: <span id="pi"></span>
+	<br>
+	Arrendodamento: <span id="round"></span>
+	<br>
+	Potenciação: <span id="pow"></span>
+	<br>
+	Raiz: <span id="sqrt"></span>
+	<br>
+	<script type="text/javascript">
+		document.getElementById('pi').innerHTML = Math.PI;
+
+		//O metodo Math.round(x) retorna o valor de x arredondado para o inteiro mais próximo.
+		document.getElementById("round").innerHTML = Math.round(4.4);
+
+		//Potenciação
+		document.getElementById("pow").innerHTML = Math.pow(8,2);
+
+		//Raiz
+		document.getElementById("sqrt").innerHTML = Math.sqrt(64);
+
+		//Existem muitos outros metodos além dos apresentados...
+	</script>
+</body>
+</html>

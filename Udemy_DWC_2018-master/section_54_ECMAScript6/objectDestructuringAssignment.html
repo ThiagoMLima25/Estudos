@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+        var obj = {
+            tipo: "Caneta",
+            cor: "Azul",
+            marca: "Bic",
+            preco: 2
+        }
+        
+        console.log(obj.tipo);
+        console.log(obj.marca);
+        console.log(obj.preco);
+
+         var {tipo, marca, preco, tampas} = {
+            tipo: "Caneta",
+            cor: "Azul",
+            marca: "Bic",
+            preco: 2,
+            tampas:["redonda", "quadrada"]
+        }
+
+        console.log(tipo);
+        console.log(marca);
+        console.log(preco);
+        console.log(tampas[1]);
+    </script>
+</html>

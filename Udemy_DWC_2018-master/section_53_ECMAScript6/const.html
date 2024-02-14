@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+        //Constantes são declaradas com nome todo em maiusculo
+        //Só pode existir uma constante em um escopo.
+        const ANO_NASCIMENTO = 1993;
+
+        function idade(AnoAtual) {
+            var ANO_NASCIMENTO = 2000;
+            return AnoAtual - ANO_NASCIMENTO;
+        }
+
+        console.log(idade(2018));
+    </script>
+</html>

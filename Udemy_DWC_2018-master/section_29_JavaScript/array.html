@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var frutas = [];
+
+        frutas[0] = "UVA";
+        frutas[1] = "LARANJA";
+        frutas[2] = "BANANA";
+        frutas[3] = "MAÇA";
+        
+        //Adicionar no Final
+        frutas.push("MAMÂO");
+        
+        //Exclui o primeiro elemento
+        frutas.shift();
+        
+        var verduras = ["Alfcace", "Couve", "Espinafre", "Couve-Flor"];
+
+        //Adicionar no Inicio
+        verduras.unshift("Acelga");    
+        
+        //Exclui o último elemento
+        verduras.pop();
+        
+        console.log(frutas);
+        console.log(verduras);
+
+        frutas.sort();
+
+        console.log(frutas);
+
+        console.log("Quantidade de Frutas: " + frutas.length);
+        console.log("Quantidade de Verduras: " + verduras.length);
+
+        var pesquisa = frutas.indexOf("UVA");
+        console.log(pesquisa);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

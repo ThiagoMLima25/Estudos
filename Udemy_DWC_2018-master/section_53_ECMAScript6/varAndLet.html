@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        section div {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            border-radius: 50%;
+            float: left;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+        var loto = 40;
+
+        if(loto){
+            let loto = 10;
+            console.log("escopo local:" + loto);
+        }
+
+        console.log("escopo global:" + loto);
+
+        for (let i = 0; i < 45; i++) {
+            var div = document.createElement('div');
+            div.onclick = function() {
+                alert("Clicou no elemento número " + i);
+            }
+            document.getElementsByTagName('section')[0].appendChild(div);            
+        }
+    </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQuery Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+        }
+
+        ul{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            width: 200px;
+        }
+        
+        li{
+            margin-bottom: 5px;
+        }
+        li a{
+            padding: 10px 6px; color:#39c; text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <li><a href="arquivo.zip">Arquivo Compactado</a></li>
+    <li><a href="arquivo.zip">Arquivo zipado</a></li>
+    <li><a href="arquivo.pdf">Documento de Texto</a></li>
+    <li><a href="arquivo.pdf">Curriculum Vitae</a></li>
+    <li><a href="arquivo.zip">Arquivo para Download</a></li>
+</body>
+    <script>
+        $(function(){
+            $("li a[href$='.pdf']").before("<img src='imagens/icon_pdf.gif'>");
+            $("li a[href$='.zip']").before("<img src='imagens/icon_zip.gif'>");
+        });
+    </script>
+</html>

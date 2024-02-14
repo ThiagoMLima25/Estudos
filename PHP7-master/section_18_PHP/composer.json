@@ -1,0 +1,15 @@
+{
+    "name": "thiagomlima/composer",
+    "description": "php7",
+    "type": "project",
+    "authors": [
+        {
+            "name": "ThiagoMLima25",
+            "email": "thiagolima0993@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"monolog/monolog": "1.0.*"
+    }
+}

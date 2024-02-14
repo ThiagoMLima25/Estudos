@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS DOM</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			O JavaScript pode acessar e alterar todos os elementos de um documento HTML
+			-> JavaScript pode mudar todos os elementos HTML da página
+			-> JavaScript pode alterar todos os atributos HTML na página
+			-> JavaScript pode mudar todos os estilos CSS na página
+			-> JavaScript pode remover elementos e atributos HTML existentes
+			-> JavaScript pode adicionar novos elementos e atributos HTML
+			-> JavaScript pode reagir a todos os eventos HTML existentes na página
+			-> JavaScript pode criar novos eventos HTML na página
+
+				Os métodos HTML DOM são ações que você pode executar (em elementos HTML).
+				Propriedades HTML DOM são valores (de elementos HTML) que você pode obter, definir ou alterar.
+
+				No DOM, todos os elementos HTML são definidos como objetos.
+		*/
+	</script>
+
+	<p id="valor"></p>
+	<br>
+	<div id="atributo" style="height: 150px; width: 150px; background-color: blue;"></div>
+	<br>
+	<button onclick="changered()">Mudar cor para vermelho</button>
+	<button onclick="changeblue()">Mudar cor para azul</button>
+	<script>
+	/*
+		Encontrando Elementos HTML -> Acesse o folder 2 - getElementBy
+		
+		Alterando Elementos HTML
+			----- Method -----							----- Description -----
+		element.innerHTML = novo html conteudo	Altera o conteúdo de um elemento
+	*/
+		//getElementById é o método, innerHTML é a propriedade
+		document.getElementById("valor").innerHTML = "Olá, como está os estudos?";
+
+		function changered(){
+			//Para alterar o estilo de um elemento HTML, use esta sintaxe
+			document.getElementById("atributo").style.backgroundColor = "red";
+		}
+
+		function changeblue(){
+			//Para alterar o estilo de um elemento HTML, use esta sintaxe
+			document.getElementById("atributo").style.backgroundColor = "blue";
+		}
+	</script>
+
+	<p id="p1">Clique nos botões para esconder e apresentar este texto.</p>
+
+	<input type="button" value="Esconder" onclick="document.getElementById('p1').style.visibility = 'hidden'">
+	<input type="button" value="Apresentar" onclick="document.getElementById('p1').style.visibility = 'visible'">
+
+	<p>Clique no botão para apresentar a cor do quadrado</p>
+	<p id="resultado"></p>
+	<button onclick="find()">Descobrir cor</button>
+	
+	<script type="text/javascript">
+		function find() {
+		    var valor = document.getElementById("atributo").style.backgroundColor;
+		    document.getElementById("resultado").innerHTML = valor;
+		}
+	</script>
+</body>
+</html>

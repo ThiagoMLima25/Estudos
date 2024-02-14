@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	Numero especificado de decimais
+	<p id="txt"></p>
+<br>
+	retorna uma string com um numero escrito com um tamanho especificado
+	<p id="txt2"></p>
+<br>
+	método Number
+	<p id="number"></p>
+<br>
+	método parseInt
+	<p id="parseInt"></p>
+<br>
+	método parseFloat
+	<p id="parseFloat"></p>
+
+	<script type="text/javascript">
+	/*
+		O metodo toFixed() retorna uma string, com o número escrito com um número especificado de decimais:
+	*/
+		var x = 7.154;
+		document.getElementById("txt").innerHTML =
+		    x.toFixed(0) + "<br>" +
+		    x.toFixed(2) + "<br>" +
+		    x.toFixed(4) + "<br>" +
+		    x.toFixed(6);
+
+	/*
+		O metodo toPrecision() retorna uma string com um número escrito com um tamanho especificado
+	*/
+		var x = 9.656;
+		document.getElementById("txt2").innerHTML = 
+			x.toPrecision() + "<br>" +
+		    x.toPrecision(2) + "<br>" +
+			x.toPrecision(3) + "<br>" +
+		    x.toPrecision(4) + "<br>" +
+		    x.toPrecision(6);
+
+	/*
+		Convertendo Variáveis ​​em Números
+		Existem 3 métodos JavaScript que podem ser usados ​​para converter variáveis ​​em números:
+
+		O método Number() -> Pode ser usado para converter variáveis ​​JavaScript em números.
+		
+		O método parseInt() -> Analisa uma string e retorna um número inteiro. Espaços são permitidos. Apenas o primeiro número é retornado.
+		
+		O método parseFloat() -> Analisa uma string e retorna um número. Espaços são permitidos. Apenas o primeiro número é retornado
+		
+		Esses métodos não são métodos numéricos , mas métodos JavaScript globais .
+
+		Métodos Globais
+		Métodos globais JavaScript podem ser usados ​​em todos os tipos de dados JavaScript.
+	*/
+
+		document.getElementById("number").innerHTML = 
+		    Number(true) + "<br>" +
+		    Number(false) + "<br>" +
+		    Number("  10") + "<br>" +
+		    Number("10  ") + "<br>" +
+		    Number("10 6") + "<br>" + 
+		    Number("John");
+
+	    document.getElementById("parseInt").innerHTML = 
+		    parseInt("10") + "<br>" +
+		    parseInt("10.33") + "<br>" +
+		    parseInt("10 6") + "<br>" +    
+		    parseInt("10 anos") + "<br>" +    
+		    parseInt("anos 10");
+
+		document.getElementById("parseFloat").innerHTML = 
+		    parseFloat("10") + "<br>" +
+		    parseFloat("10.33") + "<br>" +
+		    parseFloat("10 6") + "<br>" +    
+		    parseFloat("10 years") + "<br>" +
+		    parseFloat("years 10");
+
+	//Se o número não puder ser convertido, NaN (Not a Number) será retornado.	    
+	</script>
+</body>
+</html>

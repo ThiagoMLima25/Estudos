@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filtros jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style>
+		table {
+		    font-family: arial, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		td, th {
+		    border: 1px solid #dddddd;
+		    text-align: left;
+		    padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+<p>	
+	Pesquisa <input id="myInput" type="text" placeholder="Search..">
+</p>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Primeiro Nome</th>
+	      <th>Segundo Nome</th>
+	      <th>Email</th>
+	    </tr>
+	  </thead>
+	  <tbody id="myTable">
+	    <tr>
+	      <td>John</td>
+	      <td>Doe</td>
+	      <td>john@example.com</td>
+	    </tr>
+	    <tr>
+	      <td>Mary</td>
+	      <td>Moe</td>
+	      <td>mary@mail.com</td>
+	    </tr>
+	    <tr>
+	      <td>July</td>
+	      <td>Dooley</td>
+	      <td>july@greatstuff.com</td>
+	    </tr>
+	    <tr>
+	      <td>Anja</td>
+	      <td>Ravendale</td>
+	      <td>a_r@test.com</td>
+	    </tr>
+	  </tbody>
+	</table>
+</body>
+	<script type="text/javascript">
+	/**
+	*	O jQuery percorrer cada linha da tabela para verificar se há algum valor de texto que corresponda ao valor do campo de entrada.
+		O método toggle oculta a linha (display:none) que não corresponde à pesquisa.
+		Usamos o toLowerCase()método DOM para converter o texto em minúscula, o que permite pesquisar "john", "John" e até "JOHN".
+	*/	
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+		    var value = $(this).val().toLowerCase();
+		    $("#myTable tr").filter(function() {
+		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		    });
+		  });
+		});
+	</script>
+</html>

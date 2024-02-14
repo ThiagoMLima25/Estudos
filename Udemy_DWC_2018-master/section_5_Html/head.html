@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entendendo HEAD</title>
+	<meta charset="utf-8">
+
+	<meta name="Author" content="Thiago Martins de Lima">
+	<meta name="generator" content="Sublime">
+	<meta name="Keywords" content="HTML5, Curso HTML, Curso Front End">
+	<meta name="description" content="Página do curso de HTML5">
+	<meta name="application-name" content="iMedia Brazil">
+
+	<meta http-equiv="refresh" content="4">
+	<style type="text/css">
+		body{
+			background-color: #f00;
+			font-family: sans-serif;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		function escreverNome() {
+			nome.innerHTML = "Thiago Martins";
+		}
+
+		function sorteioNumero() {
+			resultado.innerHTML = Math.random() * 50;
+		}
+
+		//exibe apenas um por vez
+		window.onload = escreverNome;
+		// window.onload = sorteioNumero;
+	</script>
+</head>
+<body">
+	<p>Section 5</p>
+	<p id="nome"></p>
+	<p id="resultado"></p>
+</body>
+</html>

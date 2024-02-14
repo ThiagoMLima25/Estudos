@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encontrar posição de um elemento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        nav {
+            position: fixed;
+            width: 78px;
+            padding: 1px;
+            top: 10px;
+            left: 10px;
+            box-shadow: 0 0 5px #000;
+            background-color: chartreuse;
+            z-index: 3;    
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav li {
+            list-style: none;
+            width: 78px;
+            height: 78px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            margin-bottom: 1px;
+            cursor: pointer;
+        }
+
+        nav li:first-child {
+            background-image: url('imagem/futebol.png');
+        }
+
+        nav li:nth-child(2) {
+            background-image: url('imagem/basquete.png');
+        }
+
+        nav li:nth-child(3) {
+            background-image: url('imagem/tenis.png');
+        }
+
+        #primeira{
+            width: 100%;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #segunda{
+            width: 100%;
+            height: 100px;
+            background-color: orangered;
+        }
+        #terceira{
+            width: 100%;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+    <body>
+        <nav>
+            <ul>
+                <li id="tela1"></li>
+                <li id="tela2"></li>
+                <li id="tela3"></li>
+            </ul>
+        </nav>
+        <div id="primeira"></div>
+        <div id="segunda"></div>
+        <div id="terceira"></div>
+    </body>
+    <script>
+        $(function(){
+            var heightWindow = $(window).height();
+            
+            function resizeWindow(){
+                $("#primeira").css("height", heightWindow);
+                $("#segunda").css("height", heightWindow);
+                $("#terceira").css("height", heightWindow);
+            }
+
+            $("nav li:nth-child(1)").click(function(){
+                $('html,body').animate({scrollTop: $("#primeira").offset().top}, 1000);
+                // $('html,body').animate({scrollTop: 500}, 1000);
+            });
+
+            $("nav li:nth-child(2)").click(function(){
+                $('html,body').animate({scrollTop: $("#segunda").offset().top}, 1000);
+            });
+
+            $("nav li:nth-child(3)").click(function(){
+                $('html,body').animate({scrollTop: $("#terceira").offset().top}, 1000);
+            });
+
+            resizeWindow();
+
+            $(window).resize(function(){
+                resizeWindow();
+            });
+        });
+    </script>
+</html>

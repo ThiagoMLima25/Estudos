@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classificando uma matriz</title>
+</head>
+<body>
+	<button type="button" onclick="ordenar()">Ordenando</button>
+	<p id="default">Ford, Mustang, Porsche, Ferrari</p>
+	<p id="sort"></p>
+	<p id="reverse"></p>
+	<script type="text/javascript">
+		
+		function ordenar()
+		{	
+			var carros = ["Ford","Mustang","Porsche","Ferrari"];
+		//O método sort classifica uma matriz em ordem alfabética
+			carros.sort();
+			document.getElementById('sort').innerHTML = carros;
+		//O método reverse inverte os elementos em uma matriz
+		//Você pode usá-lo para classificar uma matriz em ordem decrescente	
+			carros.reverse();
+			document.getElementById('reverse').innerHTML = carros;
+
+		//Existem outros metodos de classificação utilizando matrizes...	
+		}
+	</script>
+</body>
+</html>

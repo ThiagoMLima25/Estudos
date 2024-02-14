@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enviar Parâmentros para uma função com evento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #janela{
+            border: 1px solid #666;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="submit" id="btnBlue" value="Azul">    
+    <input type="submit" id="btnRed" value="Vermelho">    
+    <input type="submit" id="btnGreen" value="Verde">  
+    
+    <div id="janela"></div>
+</body>
+    <script>
+        // function applyBlueColor(){
+        //     $("#janela").css("background-color","blue");
+        // }
+
+        // function applyRedColor(){
+        //     $("#janela").css("background-color","red");
+        // }
+
+        // function applyGreenColor(){
+        //     $("#janela").css("background-color","green");
+        // }
+
+        // $(function(){
+        //     $("#btnBlue").on("click", applyBlueColor);
+        //     $("#btnRed").on("click", applyRedColor);
+        //     $("#btnGreen").on("click", applyGreenColor);
+        // });
+
+        function applyColor(e){
+            $("#janela").css("background-color", e.data.cor);
+            $("#janela").css("width", e.data.largura);
+        }
+
+        $(function(){
+            $("#btnBlue").on("click", {cor:"blue", largura:"250px"}, applyColor);
+            $("#btnRed").on("click", {cor:"red", largura:"350px"}, applyColor);
+            $("#btnGreen").on("click",{cor:"green", largura:"450px"}, applyColor);
+        });
+    </script>
+</html>

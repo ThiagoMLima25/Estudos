@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matriz</title>
+</head>
+<body>
+	Nome
+	<input type="text" name="txt_nome" id="txt_nome">
+	Sobrenome
+	<input type="text" name="txt_sobrenome" id="txt_sobrenome">
+	<button type="button" onclick="save()">Salvar nome</button>
+	<br><br>
+	<button type="button" onclick="show()">Apresentar nomes da matriz pré-definida</button>
+	
+	<script type="text/javascript">
+	/*
+		Array e Matriz são as mesma coisa.
+		Matrizes JavaScript são usadas para armazenar vários valores em uma única variável
+		Você se refere a um elemento de matriz referindo-se ao número do índice
+		Os índices de matriz começam com 0
+		A melhor maneira de percorrer uma matriz é usar um loop "for".
+	*/
+	function save()
+	{
+	//Em JavaScript, os arrays usam índices numerados 
+		var nomeCompleto = [];
+		nomeCompleto[0] = document.getElementById('txt_nome').value;
+		nomeCompleto[1] = document.getElementById('txt_sobrenome').value;
+	
+	//A propriedade length de uma matriz retorna o tamanho de uma matriz (o número de elementos da matriz).
+		document.write("Nome Completo: ");
+		for (var elemento = 0; elemento < nomeCompleto.length; elemento++)
+		{	
+			document.write(nomeCompleto[elemento] +" ");
+		}
+
+		//document.write(nomeCompleto[0]+nomeCompleto[1]);
+	}	
+	
+	function show()
+	{
+		var nome = ["Thiago", "Pedro", "Maria", "Carlos", "Ana"];
+		for (var x = 0; x < nome.length; x++)
+		{
+			document.write("Nome: "+ nome[x] +"<br>");	
+		}
+	}	
+	</script>
+</body>
+</html>

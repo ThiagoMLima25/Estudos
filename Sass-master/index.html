@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sass</title>
+	<link rel="stylesheet" type="text/css" href="inc/main.css">
+</head>
+<body>
+	----- Váriaveis -----
+	<p class="txt1">Esté é o primeiro paragráfo.</p>
+	<p class="txt2">Esté é o segundo paragráfo.</p>
+	<p class="txt3">Esté é o terceiro paragráfo.</p>
+****************************************************
+	<p>----- Aninhamento -----</p>
+	<p>
+		<a href="">Link 1</a> | <a href="">Link 2</a>
+	</p>
+	
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+
+	<div class="caixa">
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<p><a href="">Ler mais...</a></p>			
+	</div>
+****************************************************
+<p>----- Partials e Import -----</p>
+<p class="titulo">Título</p>
+	<div class="sec1">
+		<p>seção 1</p>
+	</div>
+
+	<div class="sec2">
+		<p>seção 2</p>
+	</div>
+
+	<div class="sec3">
+		<p>seção 3</p>
+	</div>
+****************************************************
+<p>----- Mixins -----</p>
+	<div class="artigo1">
+		<h1>Título 1</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis vel sapien id fringilla. Sed dictum massa ante, eu porttitor urna efficitur nec. Morbi eu nulla eu nisi volutpat dapibus quis at nisi.
+		</p>
+	</div>
+<hr>
+	<div class="artigo2">
+		<h1>Título 2</h1>
+		<p>
+			Quisque gravida vestibulum maximus. Maecenas a libero quis ligula cursus viverra. Aenean ultricies ipsum ligula, ultricies porttitor tellus malesuada non. Donec erat diam, sollicitudin nec dignissim ac, pharetra porttitor massa.
+		</p>
+	</div>
+<hr>
+	<div class="artigo3">
+		<h1>Título 3</h1>
+		<p>
+			Morbi pretium, neque sit amet luctus dictum, sapien ipsum interdum felis, sed congue augue erat at felis. Vivamus suscipit lorem quis enim ultrices, sit amet venenatis velit tristique.
+		</p>
+	</div>
+****************************************************
+<p>----- Herança -----</p>
+
+	<p class="p1">Parágrafo 1</p>
+	<p class="p2">Parágrafo 2</p>
+	<p class="p3">Parágrafo 3</p>
+
+	<script type="text/javascript">
+	/*
+		O que é Sass (Syntactically Awesome StyleSheets)? é um pré-processador de CSS.
+		O Sass permite que você use recursos que ainda não existem no CSS, como variáveis, aninhamento, mixins, herança e outras coisas interessantes.
+
+		Compilar Sass:
+					->	 sass input.scss output.css
+								|			|	
+					(Nome do arquivo/ Caminho até o arquivo)
+
+	(Disponivel ao utilizar a instalação via Ruby Sass. Via npm ainda não disponivel)
+		Monitorar arquivo e atualizar o CSS toda vez que o arquivo do Sass for alterado:
+		->	sass --watch input.scss:output.css
+
+		Monitorar diretório com muitos arquivos Sass:
+		->	sass --watch app/sass:public/stylesheets
+		
+		Documentação completa
+		-> sass --help 		
+	*/
+	</script>
+</body>
+</html>

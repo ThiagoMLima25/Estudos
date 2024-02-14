@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos strings parte 5</title>
+</head>
+<body>
+	Caractere selecionado: <span id="txt"></span>
+	<br>
+	Convertendo uma string em array
+	<p id="array"></p>
+	<script type="text/javascript">
+	/*
+		O método charAt() retorna o caractere em um índice especificado (posição) em uma string.
+	*/
+		var str = "Qual caractere foi selecionado?";
+		document.getElementById("txt").innerHTML = str.charAt(7);
+
+	/*
+		Acessando uma cadeia como uma matriz é inseguro
+		Você pode ter visto um código como este, acessando uma string como uma matriz:
+		
+		var str = "HELLO WORLD";
+		str[0];                   // returns HELLO
+
+		Isso é inseguro e imprevisível:
+
+		Não funciona em todos os navegadores (não em IE5, IE6, IE7)
+		Faz com que as strings pareçam matrizes (mas não são)
+		str [0] = "H" não dá um erro (mas não funciona)
+		Se você quiser ler uma string como uma matriz, converta-a para uma matriz primeiro.
+	*/	
+
+	/*
+		Uma string pode ser convertida em um array com o método split()
+	*/
+
+		var str = "Thiago";
+		//Se o separador for "" omitido, a matriz retornada será uma matriz de caracteres únicos
+		var array = str.split("");
+		var text = "";
+		
+		for (var i = 0; i < array.length; i++) {
+		    text += array[i] + "<br>"
+		}
+		document.getElementById("array").innerHTML = text;
+
+	/*
+		String Methods - Existem muitos outros metodos além dos apresentados...
+		endsWith() 		->Checks whether a string ends with specified string/characters
+		fromCharCode()	->Converts Unicode values to characters
+		includes()		->Checks whether a string contains the specified string/characters
+
+	*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        var frase = "Thiago Martins";
+        var primeira = frase.charAt(0);
+        
+        var letra = "";
+        var primeiraPalavra = ""
+
+        var i = 0;
+        while(letra != " "){
+            letra = frase.charAt(i);
+            primeiraPalavra += letra;
+            i++;
+        }
+        console.log(primeiraPalavra);
+
+        var z = 0;
+        while(letra != " "){
+            letra = frase.charAt(z);
+            primeiraPalavra = frase.substr(0,z);
+            z++;
+        }
+        console.log(primeiraPalavra);
+
+        var primeiraSub = frase.substr(0,6);
+        console.log(primeiraSub);
+
+        var fraseChamp = "Meu time é o campeão";
+        console.log(fraseChamp.split(" "));
+        console.log(fraseChamp.split(" ")[0]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch</title>
+</head>
+<body>
+	<p id="dia"></p>
+	<script type="text/javascript">
+	/*
+		A instrução switch é usada para executar diferentes ações com base em diferentes condições
+		Uma quebra pode economizar muito tempo de execução porque "ignora" a execução de todo o resto do código no bloco de switches
+	*/
+	var dia;
+	switch (new Date().getDay()) {
+	    case 0:
+	        dia = "Domingo";
+	        break;
+	    case 1:
+	        dia = "Segunda";
+	        break;
+	    case 2:
+	        dia = "Terça";
+	        break;
+	    case 3:
+	        dia = "Quarta";
+	        break;
+	    case 4:
+	        dia = "Quinta";
+	        break;
+	    case 5:
+	        dia = "Sexta";
+	        break;
+	    case  6:
+	        dia = "Sabádo";
+	        break;
+	}
+	document.getElementById("dia").innerHTML = "Hoje é " + dia;
+	</script>
+</body>
+</html>

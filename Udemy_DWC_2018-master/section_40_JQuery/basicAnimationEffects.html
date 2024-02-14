@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Efeitos Básicos de Animação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <style>
+        #janela {
+            width: 300px;
+            height: 300px;
+            background-color: cornflowerblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="mostrar" value="Mostrar">
+    <input type="button" id="esconder" value="Esconder">
+    <input type="button" id="reverso" value="Reverter">
+
+    <div id="janela"></div>
+</body>
+    <script>
+        $(function(e){
+            $("#mostrar").click(mostrarObjeto);
+            $("#esconder").click(esconderObjeto);
+            $("#reverso").click(reverterObjeto);
+        });
+
+        function mostrarObjeto(){
+            // $("#janela").show(2000, function(e){
+            //     alert("Finalizou a Animação");
+            // });
+            // $("#janela").fadeIn(300);
+            $("#janela").slideDown(300);
+        }
+
+        function esconderObjeto(){
+            // $("#janela").hide(300);
+            // $("#janela").fadeOut(300);
+            $("#janela").slideUp(300);
+        }
+
+        function reverterObjeto(){
+            // $("#janela").toggle(300);
+            // $("#janela").fadeToggle(300);
+            $("#janela").slideToggle(300);
+        }
+    </script>
+</html>

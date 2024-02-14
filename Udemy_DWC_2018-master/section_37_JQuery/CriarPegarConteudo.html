@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Criar e Pegar Conteúdo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h3></h3>
+    <ul id="listaCursos">
+        <li class="especifico">Curso HTML5 Essencial</li>
+        <li>Curso CSS3 Essencial</li>
+        <li class="especifico">Curso JavaScript Essencial</li>
+        <li>Curso JQuery Fundamental</li>
+    </ul>
+    <a href="imagem/foto6_grande.jpg"><img src="imagem/foto6.jpg"></a>
+</body>
+    <script>
+        $(function(){
+            $("h3").html("Formação de Desenvolvimento Web Completo");
+            $("#listaCursos").append("<li>Curso Bootstrap Fundamental</li>");
+            $("#listaCursos").prepend("<li>Curso PHP Fundamental</li>");
+        });
+        
+        $(function(){
+            $("a").attr("title","Alpes Suiços");
+            $("a").attr("target","_blank");
+            $("a").removeAttr("target");
+        });
+
+        $(function(){
+            // $("li.especifico").remove();
+            $("li.especifico").replaceWith("Curso TypeScript");
+            $("ul").wrapAll("<div style='border:1px solid #ccc'>");
+        });
+    </script>
+</html>

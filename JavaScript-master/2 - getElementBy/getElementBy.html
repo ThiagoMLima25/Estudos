@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Formas do GetElementBy</title>
+</head>
+<body>
+
+	<button type="button" onclick="GetId()">Id</button>
+	<button type="button" onclick="GetClass()">Classe</button>
+	<button type="button" onclick="GetTag()">Tag</button>
+
+	<p id="msgId" class="msgClass">Mensagem Padrão</p>
+
+	<script type="text/javascript">
+		function GetId() {
+			document.getElementById('msgId').innerHTML = "Mensagem alterada utilizando getElementById."; 
+		}
+
+		function GetClass() {
+			/* Um objeto NodeList é uma coleção de nós extraida do documento, onde
+			   um objeto NodeList é quase o mesmo que um objeto HTMLCollection.*/
+			document.getElementsByClassName('msgClass')[0].innerHTML = "Mensagem alterada utilizando getElementByClasseName.";
+		}
+
+		function GetTag() {
+			/* O método getElementsByTagName() retorna um objeto HTMLCollection.
+			   Um objeto HTMLCollection é uma lista do tipo matriz. */
+			document.getElementsByTagName('p')[0].innerHTML = "Mensagem alterada utilizando getElementsByTagName.";
+		}
+		/*
+			Tanto um objeto HTMLCollection quanto um objeto NodeList são uma lista semelhante a um array de objetos.
+			Ambos fornecem um índice (0, 1, 2, 3, 4, ...) para acessar cada item como uma matriz.
+			Itens HTMLCollection podem ser acessados ​​pelo seu nome, número de identificação ou número de índice.
+			Os itens de NodeList só podem ser acessados ​​pelo seu número de índice.
+			Apenas o objeto NodeList pode conter nós de atributos e nós de texto.
+			
+			Uma lista de nós não é uma matriz! Pode parecer uma matriz, mas não é.
+		*/
+	</script>
+</body>
+</html>

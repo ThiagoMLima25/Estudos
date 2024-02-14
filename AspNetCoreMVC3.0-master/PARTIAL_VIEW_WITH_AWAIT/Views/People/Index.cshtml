@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PARTIAL_VIEW_WITH_AWAIT.Models.People>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@await Html.PartialAsync("_Teens", Model)
+
+@{
+    await Html.RenderPartialAsync("_Adults", Model);
+}
+
+<partial name="_Seniors" model="Model" />

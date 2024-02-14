@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulação de jQuery DOM II</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		.alter{
+			color: red;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<p>Paragráfo.</p>
+
+	<ol>
+	  <li>List item 1</li>
+	  <li>List item 2</li>
+	  <li>List item 3</li>
+	</ol>
+
+	<button id="btn1">Novo Paragráfo</button>
+	<button id="btn2">Novo item na lista</button>
+	
+	<br><br>
+	<div id="div1" style="background-color: blue; width: 300px; height:50px; color: white;">
+		Apos clicar no botão Limpar Dados
+		<p>Todo esse texto será limpo.</p>
+	</div>
+	<br>
+	<div id="div2" style="background-color: green; width: 300px; height:50px; color: white;">
+		Apos clicar no botão Limpar Dados
+		<p>Todo esse texto será limpo.</p>
+	</div>
+	<br>
+	<button id="btnEmpty">Limpar Dados - Empty</button>
+	<button id="btnRemove">Limpar Dados - Remove</button>
+
+	<p id="addClass">Alterar via AddClass</p>
+	<button id="btnClassAdd">Adicionar Classe</button>
+	<button id="btnClassRemove">Remover Classe</button>
+	<button id="btnClassToggle">Toggle Classe</button>
+</body>
+	<script type="text/javascript">
+		/**
+		*	Vamos ver quatro métodos jQuery que são usados ​​para adicionar novos conteúdos:
+		*	append() - Insere conteúdo no final dos elementos selecionados
+		*	prepend() - Insere conteúdo no início dos elementos selecionados
+		*	after() - Insere conteúdo após os elementos selecionados
+		*	before() - Insere conteúdo antes dos elementos selecionados
+		*/
+
+		$(document).ready(function(){
+		    $("#btn1").click(function(){
+		        $("p").append(" <b>Paragráfo Adicionado</b>.");
+		    });
+
+		    $("#btn2").click(function(){
+		        $("ol").append("<li>Novo item na lista</li>");
+		    });
+		});
+
+		/**
+		*	Para remover elementos e conteúdo, existem principalmente dois métodos jQuery:
+		*	
+		*	remove() - Remove o elemento selecionado (e seus elementos filhos)
+		*	empty() - Remove os elementos filhos do elemento selecionado
+		*/
+
+		$(document).ready(function(){
+		    $("#btnEmpty").click(function(){
+		        $("#div1").empty();
+		    });
+		});
+
+		$(document).ready(function(){
+		    $("#btnRemove").click(function(){
+		        $("#div2").remove();
+		    });
+		});
+
+		/**
+		*	O jQuery possui vários métodos para manipulação de CSS. Vamos olhar para os seguintes métodos:
+		*
+		*	addClass() - Adiciona uma ou mais classes aos elementos selecionados
+		*	removeClass() - Remove uma ou mais classes dos elementos selecionados
+		*	toggleClass() - Alterna entre adicionar/remover classes dos elementos selecionados
+		*	css() - define ou retorna o atributo de estilo
+		*/
+
+		$(document).ready(function(){
+			$('#btnClassAdd').click(function(){
+				$('#addClass').addClass('alter');
+			});
+		});
+
+		$(document).ready(function(){
+			$('#btnClassRemove').click(function(){
+				$('#addClass').removeClass();
+			});
+		});
+
+		$(document).ready(function(){
+			$('#btnClassToggle').click(function(){
+				$('#addClass').toggleClass('alter');
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<VIEWS_COMPONENTS.Models.Cars>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@await Component.InvokeAsync("Sports")
+@await Component.InvokeAsync("Populars")
+@await Component.InvokeAsync("Executives")

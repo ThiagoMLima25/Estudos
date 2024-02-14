@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS DOM parte 2</title>
+</head>
+<body>
+
+	<button onclick="change()">Mudar texto</button>
+	
+	<p>Ao clicar no botão é criado um elemento css que altera 
+	o tamanho da fonte deste parágrafo.</p>
+	
+	<script>
+		//Criar um objeto de estilo
+		function change() {
+		    var ce = document.createElement("style");
+		    var ct = document.createTextNode("p{font: 18px verdana;}");
+		    ce.appendChild(ct);
+		    document.body.appendChild(ce);
+		}
+	</script>
+</body>
+</html>

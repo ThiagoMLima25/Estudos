@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mostrar e Esconder Elementos por Eventos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #janela{
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="show" value="Mostrar">
+    <!-- <input type="button" id="hide" value="Esconder"> -->
+
+    <div id="janela"></div>
+</body>
+    <script>
+        $(function(){
+            $("#janela").hide();
+            $("#show").hover(mostrarElemento, esconderElemento);
+
+            // $("#show").click(mostrarElemento);
+            // $("#hide").click(esconderElemento);
+        });
+
+        function mostrarElemento(){
+            $("#janela").show();
+        }
+
+        function esconderElemento(){
+            $("#janela").hide();
+        }
+    </script>
+</html>

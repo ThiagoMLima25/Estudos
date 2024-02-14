@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CODE_FIRST.Models.Car>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem</h1>
+
+<a asp-controller="Carros" asp-action="Novo" class="btn btn-primary">Novo Carro</a>
+
+<div class="container">
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Nome</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Brand)</td>
+                <td>@Html.DisplayFor(modelItem => item.CarName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>
+                    <a asp-controller="Carros" asp-action="Editar" asp-route-id="@item.CarId" class="btn btn-info">Atualizar</a>
+                    <a asp-controller="Carros" asp-action="Visualizar" asp-route-id="@item.CarId" class="btn btn-warning">Visualizar</a>
+                    <a asp-controller="Carros" asp-action="Deletar" asp-route-id="@item.CarId" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

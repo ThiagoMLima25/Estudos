@@ -1,0 +1,20 @@
+﻿@model IList<MINI_PROJECT_CRYPTO_CURRENCY.Models.Currency>
+
+<h4>Em qual moeda você investe?</h4>
+<hr />
+
+<form asp-controller="Currencies" asp-action="ChooseCurrency" method="POST" class="form-group">
+    @{
+        for (int i = 0; i < Model.Count(); i++)
+        {
+            <input asp-for="@Model[i].Checked" type="checkbox" />
+            <label asp-for="@Model[i].CurrencyId">@Model[i].Name</label>
+            <input asp-for="@Model[i].CurrencyId" type="hidden" />
+            <input asp-for="@Model[i].Name" type="hidden" />
+            <br />
+        }
+        <p>
+            <input type="submit" value="Enviar" class="btn btn-success" />
+        </p>
+    }
+</form>

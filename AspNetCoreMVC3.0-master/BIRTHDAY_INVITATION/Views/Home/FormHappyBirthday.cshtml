@@ -1,0 +1,44 @@
+﻿@model BIRTHDAY_INVITATION.Models.Home
+
+@{
+    ViewData["Title"] = "Formulário";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Formulário</h1>
+        <hr />
+    </head>
+<body>
+    <form asp-action="formulario" method="post">
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="name">Nome</label>
+                <input type="text" name="name" value="" />
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="email">Email</label>
+                <input type="email" name="name" value="" />
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="phone">Telefone</label>
+                <input type="text" name="phone" />
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <select asp-for="answer" name="answer">
+                    <option value="">Confirmar Presença</option>
+                    <option value="false">Não</option>
+                    <option value="true">Sim</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12"><button class="btn-group btn-success">Confirmar</button></div>
+    </form>
+</body>
+</html>

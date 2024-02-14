@@ -1,0 +1,125 @@
+/*
+	-> Váriavel
+		Pense nas variáveis ​​como uma maneira de armazenar informações que você deseja
+	reutilizar em toda a folha de estilo. Você pode armazenar coisas como cores,
+	pilhas de fontes ou qualquer valor de CSS que você queira reutilizar.
+	Sass usa o $símbolo para tornar algo uma variável.
+
+	-> Aninhamento/Nesting
+		Ao escrever HTML, você provavelmente notou que tem uma hierarquia visual e
+	aninhada nítida. CSS, por outro lado, não faz.
+	O Sass permitirá que você aninhe seus seletores CSS de uma maneira que siga a
+	mesma hierarquia visual do seu HTML. Esteja ciente de que regras excessivamente
+	aninhadas resultarão em CSS superqualificado que pode ser difícil de manter e 
+	geralmente é considerado uma prática ruim.
+
+	-> Parciais/Partials
+		Você pode criar arquivos Sass parciais que contêm pequenos trechos de CSS que
+	você pode incluir em outros arquivos Sass. O arquivo deve ser salvo como:
+	_nomeDoAquivo.scss
+		
+	-> Importar/Import
+		O Sass pegará os arquivos parciais que você deseja importar e o combinará com o
+	arquivo para o	qual você está importando, para que possa exibir um único arquivo
+	CSS no navegador web.
+	@import '_nomeDoAquivo';
+	
+	-> Mixins
+		Um mixin permite criar grupos de declarações CSS que você deseja reutilizar em
+	todo o site. Você pode até passar valores para tornar seu mixin mais flexível.
+	
+	-> Estender/ Herança
+		Usando @extendpermite compartilhar um conjunto de propriedades CSS de um seletor
+	para outro. Isso ajuda a manter seu Sass enxuto.
+*/
+
+//Váriavel
+$cor:blue;
+
+.txt1{
+	font-size: 1.2em;
+	color:$cor;
+}
+
+.txt2{
+	font-size: 1.2em;
+	color:$cor;
+}
+
+.txt3{
+	font-size: 1.2em;
+	color:$cor;
+}
+
+//Aninhamento
+.caixa{
+
+	ul{
+		color:green;
+	}
+
+	a{
+		text-decoration: none;
+		color:red;
+	}
+
+	a:hover{
+		color:blue;
+	}
+}
+//Partials e Import
+.titulo{
+	font-size:2em;
+}
+
+@import 'section/sec1';
+@import 'section/sec2';
+@import 'section/sec3';
+
+//Mixins
+@mixin noticia($cor, $p){
+	border: 1px solid black;
+	border-radius:10px;
+	margin:20px;
+	padding:$p;
+	background-color:$cor;
+}
+@mixin titulo(){
+	font-size:3em;
+	color: white;
+}
+
+.artigo1{
+	@include noticia(blue, 20px);
+}
+
+.artigo1 h1,.artigo2 h1{
+	@include titulo();
+}
+
+.artigo2{
+	@include noticia(brown, 50px);
+}
+
+
+.artigo3{
+	@include noticia(yellow, 80px);
+}
+
+//Herança
+.paragrafo{
+	background-color: orange;
+	padding: 20px;
+	color: white;
+}
+
+.p1{
+	@extend .paragrafo;
+	font-size: 1.5em;	
+}
+
+.p2{
+	@extend .paragrafo;
+	font-size: 1.5em;
+	margin: 30px;	
+}

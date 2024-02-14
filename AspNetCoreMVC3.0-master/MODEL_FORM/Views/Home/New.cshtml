@@ -1,0 +1,20 @@
+﻿@model MODEL_FORM.Models.Client
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Client</title>
+</head>
+<body>
+    <form asp-controller="Home" asp-action="New" method="post">
+        <input asp-for="Name"  placeholder="Name"/>
+        <input asp-for="PhoneNumber" placeholder="Phone Number" />
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

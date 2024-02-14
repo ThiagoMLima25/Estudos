@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tabela continuação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+			font-family:Arial, Helvetica, sans-serif;
+		}
+	
+		table { 
+			width:700px;
+			margin:0 auto;
+			border-spacing:0;
+			border-right:1px solid #ccc;
+			border-bottom:1px solid #ccc;
+		}
+		
+		caption {
+			font-size:130%;
+			font-weight:bold;
+			padding:5px 0;
+			background-color:#ECECEC;
+			border:1px solid #ccc;
+			border-bottom:none;
+		}
+		
+		tr, td, th {
+			border:thin solid #ccc;
+			border-bottom:none;
+			border-right:none;
+			padding:5px;
+		}
+		
+		td { 
+			text-align:center;
+		}
+		
+		th {
+			text-align:left;
+		}
+		
+		thead th {
+			text-align:center;
+			background-color:#E0E0E0;
+		}
+
+		thead tr th:first-child {
+			text-align:left;
+		}
+
+		/*
+            odd - Primeira faixa colorida
+            even - Segunda faixa colorida
+        */
+        /* tbody tr:nth-child(odd) {
+            background-color: gainsboro;
+        } */
+
+        /* tbody tr:nth-child(even) {
+            background-color: dimgrey;
+        } */
+
+		tfoot td {
+			font-size:.9em;
+			color:#666;
+		}
+
+        .colunaCinza{
+            background-color: #F0F0F0;
+        }
+
+        .colunaAzul{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Olimpiadas doo Rio de Janeiro</caption>
+        <colgroup>
+            <col class="colunaCinza">
+            <col>
+            <col class="colunaCinza">
+            <col>
+            <col class="colunaCinza">
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <td>OURO</td>
+                <td>PRATA</td>
+                <td>BRONZE</td>
+                <td>TOTAL</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BRASIL</td>
+                <td>250</td>
+                <td>200</td>
+                <td>70</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>ARGENTINA</td>
+                <td>110</td>
+                <td>71</td>
+                <td>36</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>CHILE</td>
+                <td>50</td>
+                <td>43</td>
+                <td>22</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>COLOMBIA</td>
+                <td>50</td>
+                <td>43</td>
+                <td>22</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>OURO</td>
+                <td>PRATA</td>
+                <td>BRONZE</td>
+                <td>TOTAL</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

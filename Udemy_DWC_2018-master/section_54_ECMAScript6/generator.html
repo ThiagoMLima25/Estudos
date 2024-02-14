@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <!-- Necessário caso vá trabalhar com Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+    
+    <script type="text/babel">
+    /*
+     * Generator - é um objeto que retorna uma função geradora
+     * Retorna dois tipos de protocolos
+     * -> Interable Protocol = Permite objetos JavaScript determinar seu comportamento tais como, quais valores estaram em loops.
+     * -> Interator Protocol = Define um padrão para produzir uma sequência de valores. Finitos ou infinitos.
+     * 
+     * O objeto é interator quando implementa o método next().
+     * 
+     * Propriedades de retorno do Interator Protocol
+     * -> done(boolean) = Retorna true quando a sequência chegou ao fim e false quando não.
+     * -> value(qualquer valor) = Retorna qualquer valor dependendo da função e pode ter seu valor omitido quando a sequência chega ao seu fim. Isto é, quando done() é true.
+     */
+
+    function* gen() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+
+    var g = gen();
+
+    console.log(g.next());
+    console.log(g.next());
+    console.log(g.next());
+    console.log(g.next());
+
+    function* idCriador(){
+        var i= 0;
+        
+        while(true){
+        yield i++;
+        }
+    }
+
+    var G = idCriador();
+
+    console.log(G.next().value);
+    console.log(G.next().value);
+    console.log(G.next().value);
+    console.log(G.next().value);
+    console.log(G.next().value);
+    console.log(G.next().value);
+
+
+    function* baterLiquidificador(ingrediente){
+        for(var i= 0; i < ingrediente.length; i++){
+            yield ingrediente[i];
+        }
+    }
+
+    var ingredientes = baterLiquidificador(["Leite", "Banana", "Nescau", "Aveia"]);
+    
+    var fazerVitamina = setInterval(function(){
+        var vitamina = ingredientes.next();
+
+        if(vitamina.done){
+            clearInterval(fazerVitamina);
+            console.log("Acabou sua Vitamina");
+        }else{
+            console.log(vitamina.value);
+        }
+    }, 1000);
+
+</script>
+</html>

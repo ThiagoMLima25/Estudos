@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQuery Fundamental</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <a href="#">Brasil</a>
+        <a href="#">Argentina</a>
+        <a href="#">Uruguai</a>
+        <a href="#">Chile</a>
+    </nav>
+
+    <a href="#">Colombia</a>
+
+    <script>
+        alert("Está página contém " + $("nav a").length +" links");
+
+        $(function(){
+            $("nav a:first").css("color", "yellow").css("displaytext-decoration", "none");
+            $("nav a:nth(2)").css("color", "green").css("displaytext-decoration", "none");
+            $("nav a:contains('Argentina')").css("color", "blue").css("displaytext-decoration", "none");
+            $("nav a:last").css("color", "red").css("displaytext-decoration", "none");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECMAScrit 6.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    
+    <script type="text/babel">
+        // var [primeiro, segundo, , quarto] = ["Uva", "Maça", "Abacate", "Laranja", "Tangerina"];
+        var [primeiro, segundo, ...resto] = ["Uva", "Maça", "Abacate", "Laranja", "Tangerina"];
+
+        console.log(primeiro);
+        console.log(segundo);
+        // console.log(quarto);
+        console.log(resto);
+    </script>
+</html>
