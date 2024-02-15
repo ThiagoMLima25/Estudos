@@ -6,7 +6,7 @@ Este repositório tem como propósito me ajudar a reorganizar e preservar meus p
 Quem nunca iniciou os seus estudos em uma determinada linguagem de programação e acabou perdendo esse código em algum momento da vida?!
 ```
 Tinha projetos de programação em microcontroladores em C e Assembly, bem como os esquemas eletrônicos
-desses projetos no software Proteus, os quais acabei perdendo. 💔😭 (E tem muito mais que perdi)
+desses projetos no software Proteus, os quais acabei perdendo. 💔(E tem muito mais que perdi)😭
 ```
 Foi então que decidi centralizar todos os meus códigos no GitHub. No entanto, a abordagem de armazená-los em repositórios individuais poderia resultar em uma mistura confusa de informações entre repositórios de estudos e projetos.
         
